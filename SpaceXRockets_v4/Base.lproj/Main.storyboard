@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRK-oy-A4Q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <connections>
+                                    <segue destination="f36-TC-kyT" kind="embed" id="9jJ-x9-wmC"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dRK-oy-A4Q" secondAttribute="bottom" id="GKf-zm-ZHX"/>
+                            <constraint firstItem="dRK-oy-A4Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RCF-YH-VQV"/>
+                            <constraint firstItem="dRK-oy-A4Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nnL-d4-dYr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dRK-oy-A4Q" secondAttribute="trailing" id="qP0-Im-Hna"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="80"/>
+        </scene>
+        <!--Custom Page View Controller-->
+        <scene sceneID="mUZ-C6-tHG">
+            <objects>
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="f36-TC-kyT" customClass="CustomPageViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrY-yc-pb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="80"/>
+        </scene>
+        <!--Page Detail View Controller-->
+        <scene sceneID="18h-an-Umj">
+            <objects>
+                <viewController storyboardIdentifier="PageDetailViewController" id="8kL-DR-NKd" customClass="PageDetailViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uH1-0G-JD9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Pp-fs-sR6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="712"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cVg-Wj-mMT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Pp-fs-sR6" firstAttribute="leading" secondItem="cVg-Wj-mMT" secondAttribute="leading" id="9Ij-B3-2UA"/>
+                            <constraint firstItem="4Pp-fs-sR6" firstAttribute="top" secondItem="uH1-0G-JD9" secondAttribute="top" id="LuC-w0-f2Z"/>
+                            <constraint firstItem="cVg-Wj-mMT" firstAttribute="bottom" secondItem="4Pp-fs-sR6" secondAttribute="bottom" constant="150" id="dbr-z2-phT"/>
+                            <constraint firstItem="cVg-Wj-mMT" firstAttribute="trailing" secondItem="4Pp-fs-sR6" secondAttribute="trailing" id="flz-NK-1Go"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4Pp-fs-sR6" id="bKU-Cb-JV0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riF-VO-dSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="90.401785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
