@@ -30,9 +30,6 @@ class CustomPageViewController: UIPageViewController {
 
         setViewControllers([individualPageViewControllerList[0]], direction: .forward, animated: true)
     }
-
-
-
 }
 
 extension CustomPageViewController: UIPageViewControllerDataSource {
@@ -55,8 +52,6 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
             return individualPageViewControllerList[currentIndexOfPageViewController + 1]
         }
     }
-
-
 }
 
 extension CustomPageViewController: UIPageViewControllerDelegate {
