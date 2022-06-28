@@ -14,8 +14,8 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,10 +30,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "createLayout()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +46,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "firstSection()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,10 +62,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "makeSections(from:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,10 +78,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "secondSection()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,10 +94,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "thirdSection()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +110,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "reloadData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,10 +126,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "createDataSource()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -142,10 +142,10 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "PageDetailViewController"
-            landmarkType = "3">
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "setupCollectionView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,8 +158,8 @@
             filePath = "../../../Downloads/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
