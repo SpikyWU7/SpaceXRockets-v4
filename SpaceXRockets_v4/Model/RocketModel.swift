@@ -45,13 +45,13 @@ extension RocketModel {
     struct FirstStage: Decodable, Hashable {
         let engines: Int
         let fuelAmountTons: Double
-        let burnTime: Int?
+        let burnTimeSec: Int?
     }
 
     struct SecondStage: Decodable, Hashable {
         let engines: Int
         let fuelAmountTons: Double
-        let burnTime: Int?
+        let burnTimeSec: Int?
     }
 
 }

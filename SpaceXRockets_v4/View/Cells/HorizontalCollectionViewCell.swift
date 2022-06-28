@@ -10,7 +10,7 @@ import UIKit
 class HorizontalCollectionViewCell: UICollectionViewCell {
 
     static var reuseId : String = "HorizontalCollectionViewCell"
-    private var model: RocketDetailParameters!
+    private var model: RocketModel!
 
     @IBOutlet var upLabel: UILabel!
     @IBOutlet var downLabel: UILabel!
@@ -20,7 +20,7 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(with model: RocketDetailParameters) {
+    func configure(with model: RocketModel) {
 
         self.model = model
         self.upLabel.text = String("\(model.height.feet)")

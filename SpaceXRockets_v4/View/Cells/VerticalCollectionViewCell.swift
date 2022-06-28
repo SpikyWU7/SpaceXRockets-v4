@@ -20,9 +20,7 @@ class VerticalCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(with model: RocketMainInfo) {
-
-        self.model = model
-        self.rightLabel.text = model.country
+    func configure(with model: Cell) {
+        leftLabel.text = model.value
     }
 }

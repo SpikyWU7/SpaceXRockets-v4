@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E548BE42865E99300BD62E8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BE22865E99300BD62E8 /* ImageCollectionViewCell.swift */; };
+		9E548BE52865E99300BD62E8 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E548BE32865E99300BD62E8 /* ImageCollectionViewCell.xib */; };
+		9E548BE82865E9A100BD62E8 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BE62865E9A100BD62E8 /* LabelCollectionViewCell.swift */; };
+		9E548BE92865E9A100BD62E8 /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E548BE72865E9A100BD62E8 /* LabelCollectionViewCell.xib */; };
+		9E548BEE2865E9C500BD62E8 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BEC2865E9C500BD62E8 /* ButtonCollectionViewCell.swift */; };
+		9E548BEF2865E9C500BD62E8 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E548BED2865E9C500BD62E8 /* ButtonCollectionViewCell.xib */; };
+		9E548BF12866063300BD62E8 /* RocketName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BF02866063300BD62E8 /* RocketName.swift */; };
+		9E548BF32866063F00BD62E8 /* RocketImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BF22866063F00BD62E8 /* RocketImage.swift */; };
 		9E627FA02861F1C500B1859B /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E627F9E2861F1C500B1859B /* HorizontalCollectionViewCell.swift */; };
 		9E627FA12861F1C500B1859B /* HorizontalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E627F9F2861F1C500B1859B /* HorizontalCollectionViewCell.xib */; };
 		9E627FA42861F1FC00B1859B /* VerticalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E627FA22861F1FC00B1859B /* VerticalCollectionViewCell.swift */; };
@@ -27,6 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E548BE22865E99300BD62E8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E548BE32865E99300BD62E8 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E548BE62865E9A100BD62E8 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E548BE72865E9A100BD62E8 /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E548BEC2865E9C500BD62E8 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E548BED2865E9C500BD62E8 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		9E548BF02866063300BD62E8 /* RocketName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketName.swift; sourceTree = "<group>"; };
+		9E548BF22866063F00BD62E8 /* RocketImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketImage.swift; sourceTree = "<group>"; };
 		9E627F9E2861F1C500B1859B /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E627F9F2861F1C500B1859B /* HorizontalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionViewCell.xib; sourceTree = "<group>"; };
 		9E627FA22861F1FC00B1859B /* VerticalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -66,6 +82,12 @@
 				9E627F9F2861F1C500B1859B /* HorizontalCollectionViewCell.xib */,
 				9E627FA22861F1FC00B1859B /* VerticalCollectionViewCell.swift */,
 				9E627FA32861F1FC00B1859B /* VerticalCollectionViewCell.xib */,
+				9E548BE22865E99300BD62E8 /* ImageCollectionViewCell.swift */,
+				9E548BE32865E99300BD62E8 /* ImageCollectionViewCell.xib */,
+				9E548BE62865E9A100BD62E8 /* LabelCollectionViewCell.swift */,
+				9E548BE72865E9A100BD62E8 /* LabelCollectionViewCell.xib */,
+				9E548BEC2865E9C500BD62E8 /* ButtonCollectionViewCell.swift */,
+				9E548BED2865E9C500BD62E8 /* ButtonCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -76,6 +98,8 @@
 				9E627FC0286312E200B1859B /* RocketDetailParameters.swift */,
 				9E627FC22863135000B1859B /* RocketMainInfo.swift */,
 				9E627FCA28635C8F00B1859B /* RocketModel.swift */,
+				9E548BF02866063300BD62E8 /* RocketName.swift */,
+				9E548BF22866063F00BD62E8 /* RocketImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,7 +224,10 @@
 			files = (
 				9E627FA52861F1FC00B1859B /* VerticalCollectionViewCell.xib in Resources */,
 				9E627FBC28622CD900B1859B /* rocket.json in Resources */,
+				9E548BEF2865E9C500BD62E8 /* ButtonCollectionViewCell.xib in Resources */,
 				9E627FA12861F1C500B1859B /* HorizontalCollectionViewCell.xib in Resources */,
+				9E548BE92865E9A100BD62E8 /* LabelCollectionViewCell.xib in Resources */,
+				9E548BE52865E99300BD62E8 /* ImageCollectionViewCell.xib in Resources */,
 				9E69CF802861D5070031CEA4 /* LaunchScreen.storyboard in Resources */,
 				9E69CF7D2861D5070031CEA4 /* Assets.xcassets in Resources */,
 				9E69CF7B2861D5050031CEA4 /* Main.storyboard in Resources */,
@@ -220,10 +247,15 @@
 				9E627FCB28635C8F00B1859B /* RocketModel.swift in Sources */,
 				9E69CF782861D5050031CEA4 /* ViewController.swift in Sources */,
 				9E627FA02861F1C500B1859B /* HorizontalCollectionViewCell.swift in Sources */,
+				9E548BE42865E99300BD62E8 /* ImageCollectionViewCell.swift in Sources */,
+				9E548BF32866063F00BD62E8 /* RocketImage.swift in Sources */,
+				9E548BF12866063300BD62E8 /* RocketName.swift in Sources */,
 				9E69CF742861D5050031CEA4 /* AppDelegate.swift in Sources */,
 				9E627FA42861F1FC00B1859B /* VerticalCollectionViewCell.swift in Sources */,
 				9E69CF762861D5050031CEA4 /* SceneDelegate.swift in Sources */,
 				9E627FBF28622F7B00B1859B /* Decoder.swift in Sources */,
+				9E548BE82865E9A100BD62E8 /* LabelCollectionViewCell.swift in Sources */,
+				9E548BEE2865E9C500BD62E8 /* ButtonCollectionViewCell.swift in Sources */,
 				9E627FC1286312E200B1859B /* RocketDetailParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

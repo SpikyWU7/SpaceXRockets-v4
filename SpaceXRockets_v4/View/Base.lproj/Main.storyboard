@@ -55,96 +55,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueP-Nx-w7r">
-                                <rect key="frame" x="0.0" y="-50" width="320" height="668"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="Kl8-mU-kfB">
-                                        <rect key="frame" x="0.0" y="327" width="320" height="488"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PX6-Su-zgd">
-                                        <rect key="frame" x="0.0" y="350" width="320" height="1000"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FALCON HEAVY 777" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdZ-hM-PNE">
-                                                <rect key="frame" x="15" y="40" width="156" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gear" translatesAutoresizingMaskIntoConstraints="NO" id="LbY-GE-Tuj">
-                                                <rect key="frame" x="272" y="30" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="Xqn-Bs-0mH"/>
-                                                    <constraint firstAttribute="height" constant="40" id="zfQ-ej-9Rb"/>
-                                                </constraints>
-                                            </imageView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RIt-Hy-yJq">
-                                                <rect key="frame" x="0.0" y="100" width="320" height="750"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewLayout key="collectionViewLayout" id="LnV-QP-Ed0"/>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="aQ7-hq-9zo" customClass="HorziontalCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CwS-af-8OG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VerticalCollectionViewCell" id="c4q-y9-cZe" customClass="VerticalCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
-                                                        <rect key="frame" x="67.5" y="0.0" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="neY-HT-QI5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </collectionViewCell>
-                                                </cells>
-                                            </collectionView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="LbY-GE-Tuj" secondAttribute="trailing" constant="8" id="6Me-GV-72d"/>
-                                            <constraint firstItem="XdZ-hM-PNE" firstAttribute="top" secondItem="PX6-Su-zgd" secondAttribute="top" constant="40" id="8Qu-ik-9E9"/>
-                                            <constraint firstAttribute="bottom" secondItem="RIt-Hy-yJq" secondAttribute="bottom" constant="150" id="CVv-pG-CWn"/>
-                                            <constraint firstItem="RIt-Hy-yJq" firstAttribute="leading" secondItem="PX6-Su-zgd" secondAttribute="leading" id="LvF-aS-Bry"/>
-                                            <constraint firstItem="XdZ-hM-PNE" firstAttribute="leading" secondItem="PX6-Su-zgd" secondAttribute="leading" constant="15" id="MMH-jX-tWP"/>
-                                            <constraint firstItem="RIt-Hy-yJq" firstAttribute="top" secondItem="LbY-GE-Tuj" secondAttribute="bottom" constant="30" id="RUh-dm-jzq"/>
-                                            <constraint firstItem="LbY-GE-Tuj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XdZ-hM-PNE" secondAttribute="trailing" constant="101" id="i47-yL-dQM"/>
-                                            <constraint firstAttribute="height" constant="1000" id="nzd-So-vxw"/>
-                                            <constraint firstAttribute="trailing" secondItem="RIt-Hy-yJq" secondAttribute="trailing" id="uCl-sq-asx"/>
-                                            <constraint firstItem="LbY-GE-Tuj" firstAttribute="top" secondItem="PX6-Su-zgd" secondAttribute="top" constant="30" id="uYr-Yh-6gG"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Kl8-mU-kfB" firstAttribute="leading" secondItem="z8e-S0-18x" secondAttribute="leading" id="CCL-ab-uEb"/>
-                                    <constraint firstItem="PX6-Su-zgd" firstAttribute="leading" secondItem="YTC-mn-WOn" secondAttribute="leading" id="HHV-DG-kVI"/>
-                                    <constraint firstItem="PX6-Su-zgd" firstAttribute="width" secondItem="z8e-S0-18x" secondAttribute="width" id="SS1-hb-Nxk"/>
-                                    <constraint firstItem="Kl8-mU-kfB" firstAttribute="trailing" secondItem="z8e-S0-18x" secondAttribute="trailing" id="SgT-qd-wwx"/>
-                                    <constraint firstItem="Kl8-mU-kfB" firstAttribute="top" secondItem="z8e-S0-18x" secondAttribute="top" id="WKp-8G-FIs"/>
-                                    <constraint firstItem="z8e-S0-18x" firstAttribute="bottom" secondItem="Kl8-mU-kfB" secondAttribute="bottom" constant="180" id="Yb5-S2-oHg"/>
-                                    <constraint firstItem="PX6-Su-zgd" firstAttribute="trailing" secondItem="YTC-mn-WOn" secondAttribute="trailing" id="pT5-vu-Zpg"/>
-                                    <constraint firstItem="PX6-Su-zgd" firstAttribute="bottom" secondItem="YTC-mn-WOn" secondAttribute="bottom" id="t5O-Gr-bqX"/>
-                                    <constraint firstItem="PX6-Su-zgd" firstAttribute="top" secondItem="YTC-mn-WOn" secondAttribute="top" constant="350" id="wQy-t2-5qK"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="YTC-mn-WOn"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="z8e-S0-18x"/>
-                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ks3-po-in0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9hC-2d-hHD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="ZTY-2n-ibV" customClass="ImageCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kHw-1v-Tpk">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgk-hb-qxZ">
+                                                    <rect key="frame" x="43" y="53.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hgk-hb-qxZ" firstAttribute="centerY" secondItem="kHw-1v-Tpk" secondAttribute="centerY" id="5UW-M2-YZ9"/>
+                                                <constraint firstItem="hgk-hb-qxZ" firstAttribute="centerX" secondItem="kHw-1v-Tpk" secondAttribute="centerX" id="Raz-kX-waP"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LabelCollectionViewCell" id="XOl-Nw-0Al" customClass="LabelCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HPY-gB-M2b">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HorizontalCollectionViewCell" id="JKv-aj-TPy" customClass="HorizontalCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
+                                        <rect key="frame" x="192" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WHa-x3-PFU">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VerticalCollectionViewCell" id="L5k-hi-3iS" customClass="VerticalCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="276" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="c2s-zy-0my">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCollectionViewCell" id="Wra-Vo-14S" customClass="ButtonCollectionViewCell" customModule="SpaceXRockets_v4" customModuleProvider="target">
+                                        <rect key="frame" x="192" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tg7-Rz-ytN">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVg-Wj-mMT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
-                            <constraint firstItem="ueP-Nx-w7r" firstAttribute="leading" secondItem="cVg-Wj-mMT" secondAttribute="leading" id="83J-aq-CTN"/>
-                            <constraint firstItem="ueP-Nx-w7r" firstAttribute="trailing" secondItem="cVg-Wj-mMT" secondAttribute="trailing" id="Vhj-TE-0P0"/>
-                            <constraint firstItem="ueP-Nx-w7r" firstAttribute="bottom" secondItem="cVg-Wj-mMT" secondAttribute="bottom" constant="50" id="dNT-UL-vol"/>
-                            <constraint firstItem="ueP-Nx-w7r" firstAttribute="top" secondItem="cVg-Wj-mMT" secondAttribute="top" constant="-50" id="rwa-gL-a0G"/>
+                            <constraint firstItem="ks3-po-in0" firstAttribute="top" secondItem="cVg-Wj-mMT" secondAttribute="top" id="9hU-fy-3o9"/>
+                            <constraint firstItem="ks3-po-in0" firstAttribute="leading" secondItem="cVg-Wj-mMT" secondAttribute="leading" id="NUr-1h-PIY"/>
+                            <constraint firstItem="ks3-po-in0" firstAttribute="trailing" secondItem="cVg-Wj-mMT" secondAttribute="trailing" id="mGi-f3-eGf"/>
+                            <constraint firstItem="ks3-po-in0" firstAttribute="bottom" secondItem="cVg-Wj-mMT" secondAttribute="bottom" id="wii-hZ-R86"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="RIt-Hy-yJq" id="Due-Ko-mAb"/>
-                        <outlet property="imageView" destination="Kl8-mU-kfB" id="KYD-h0-322"/>
+                        <outlet property="collectionView" destination="ks3-po-in0" id="ZF8-JL-HDZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="riF-VO-dSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -153,13 +145,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" width="512" height="512"/>
-        <image name="img1" width="832" height="1248"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

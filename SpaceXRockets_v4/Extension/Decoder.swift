@@ -19,6 +19,8 @@ extension Bundle {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let result = try decoder.decode(T.self, from: jsonData)
+//            let components = result.split {!$0.isLetter}
+            print(result)
             return result
         } catch {
             print("Failed to load and decode JSON \(error)")
