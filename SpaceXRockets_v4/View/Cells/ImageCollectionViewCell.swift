@@ -11,13 +11,13 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var rocketImage: UIImageView!
     @IBOutlet var rocketName: UILabel?
-    @IBOutlet var rocketView: ImageCollectionViewCell!
+    @IBOutlet var labelView: UIView!
 
     static var reuseId : String = "ImageCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        rocketView.layer.cornerRadius = 30
+        labelView.layer.cornerRadius = 15
     }
 
     @IBAction func settingsButton() {

@@ -21,6 +21,7 @@ class VerticalCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with model: Cell) {
-        leftLabel.text = model.value
+        self.leftLabel.text = model.title
+        self.rightLabel.text = model.value
     }
 }

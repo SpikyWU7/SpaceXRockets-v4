@@ -12,18 +12,18 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
     static var reuseId : String = "HorizontalCollectionViewCell"
     private var model: RocketModel!
 
+    @IBOutlet var cellView: UIView!
     @IBOutlet var upLabel: UILabel!
     @IBOutlet var downLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cellView.layer.cornerRadius = 25.0
     }
 
-    func configure(with model: RocketModel) {
-
-        self.model = model
-        self.upLabel.text = String("\(model.height.feet)")
+    func configure(with model: Cell) {
+        self.upLabel.text = model.value
+        self.downLabel.text = model.title
     }
 
 }
