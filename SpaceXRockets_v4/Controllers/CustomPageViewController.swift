@@ -10,27 +10,28 @@ import UIKit
 class CustomPageViewController: UIPageViewController {
 
     var individualPageViewControllerList = [UIViewController]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-
         self.dataSource = self
         self.delegate = self
-
         self.view.backgroundColor = .systemGray
-
         individualPageViewControllerList = [
             PageDetailViewController.getInstance(index: 0),
             PageDetailViewController.getInstance(index: 1),
             PageDetailViewController.getInstance(index: 2),
             PageDetailViewController.getInstance(index: 3)
         ]
-
         setViewControllers([individualPageViewControllerList[0]], direction: .forward, animated: true)
     }
+
 }
+
+
+
+
+
 
 extension CustomPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

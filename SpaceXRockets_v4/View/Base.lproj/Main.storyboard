@@ -61,6 +61,74 @@
             </objects>
             <point key="canvasLocation" x="1841.25" y="78.16901408450704"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3aM-F0-3GX">
+            <objects>
+                <navigationController id="zTL-vL-Jjs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="enm-jP-BOw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dW6-aq-xP0" kind="show" id="LNl-as-oto"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLn-vn-kHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="841"/>
+        </scene>
+        <!--Launches View Controller-->
+        <scene sceneID="pbM-1O-LBR">
+            <objects>
+                <viewController storyboardIdentifier="LaunchesViewController" modalPresentationStyle="fullScreen" id="dW6-aq-xP0" customClass="LaunchesViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lSt-il-u2z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKC-LI-rz7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="M0O-A6-DCu">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="HXw-J4-wRT">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="w81-G4-B0t">
+                                                <rect key="frame" x="16" y="5" width="75" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed" destination="dW6-aq-xP0" eventType="touchUpInside" id="H9H-hN-CJm"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CuH-e3-FiJ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Ps-ah-Rug"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="bottom" secondItem="8Ps-ah-Rug" secondAttribute="bottom" id="BAE-RV-OTw"/>
+                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="leading" secondItem="8Ps-ah-Rug" secondAttribute="leading" id="IFQ-ed-DvV"/>
+                            <constraint firstItem="TKC-LI-rz7" firstAttribute="top" secondItem="8Ps-ah-Rug" secondAttribute="top" id="JaT-wp-Zx3"/>
+                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="trailing" secondItem="8Ps-ah-Rug" secondAttribute="trailing" id="S0A-0H-gfl"/>
+                            <constraint firstItem="TKC-LI-rz7" firstAttribute="trailing" secondItem="8Ps-ah-Rug" secondAttribute="trailing" id="dzv-5m-UM1"/>
+                            <constraint firstItem="TKC-LI-rz7" firstAttribute="leading" secondItem="8Ps-ah-Rug" secondAttribute="leading" id="kwX-cv-thl"/>
+                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="top" secondItem="TKC-LI-rz7" secondAttribute="bottom" id="lO1-1D-4h0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Uc-JY-pnU"/>
+                    <connections>
+                        <outlet property="launchesTable" destination="CuH-e3-FiJ" id="Swf-2q-fuu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7f3-iV-ZEu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.375" y="840.84507042253517"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

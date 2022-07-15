@@ -11,12 +11,15 @@ struct Cell: Hashable {
     let id = UUID()
     let title: String
     let value: String
+//    let units: String
 }
 
 enum SectionType: Int, CaseIterable {
     case imageLabel
     case params
-    case info
+    case mainSection
+    case firstStage
+    case secondStage
     case launches
 }
 
@@ -25,25 +28,24 @@ struct Section {
     let cells: [Cell]
 }
 
-class PageDetailViewController: UIViewController {
-    
-    let rockets = Bundle.main.decode([RocketModel].self, from: "rocket.json")
-    
+class PageDetailViewController: UIViewController, CallLaunchesVCProtocol {
+
+    let networkAPI = NetworkAPI.shared
+    var rockets: [RocketModel] = []
     var index: Int = 0
     var dataSource: UICollectionViewDiffableDataSource<SectionType, Cell>! = nil
     var collectionView: UICollectionView! = nil
-    //    @IBOutlet var imageView: UIImageView!
-    
-    var images = ["img1", "img2", "img3", "img4"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.imageView.image = UIImage(named: images[index])
         view.backgroundColor = .orange
         navigationItem.title = "Rocket"
         setupCollectionView()
         createDataSource()
-        reloadData()
+        networkAPI.getRockets(dataType: [RocketModel].self) { data in
+            self.rockets = data
+            self.reloadData()
+    }
     }
     
     static func getInstance(index: Int) -> PageDetailViewController {
@@ -51,11 +53,21 @@ class PageDetailViewController: UIViewController {
         vc.index = index
         return vc
     }
+
+    func presentLaunchesViewController() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchesViewController") as! LaunchesViewController
+        self.present(viewController, animated: true, completion: nil)
+    }
     
+
+    //MARK: - setupCollectionView
+
     func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .blue
+        let headerNib = UINib(nibName: StagesHeaderView.reuseId, bundle: nil)
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId)
         let nib1 = UINib(nibName: ImageCollectionViewCell.reuseId, bundle: nil)
         collectionView.register(nib1, forCellWithReuseIdentifier: ImageCollectionViewCell.reuseId)
         let nib2 = UINib(nibName: VerticalCollectionViewCell.reuseId, bundle: nil)
@@ -85,18 +97,29 @@ class PageDetailViewController: UIViewController {
                 ]
             ),
             Section(
-                type: .info,
+                type: .mainSection,
                 cells: [
                     Cell(title: "Первый запуск", value: rocket.firstFlight),
                     Cell(title: "Страна", value: rocket.country),
                     Cell(title: "Стоимость запуска", value: rocket.launchCost),
+                ]
+            ),
+            Section(
+                type: .firstStage,
+                cells: [
                     Cell(title: "Количество двигателей", value: String(rocket.firstStage.engines)),
                     Cell(title: "Количество топлива", value: String(rocket.firstStage.fuelAmountTons)),
-                    Cell(title: "Время сгорания", value: String(rocket.firstStage.burnTimeSec ?? 0)),
-                    Cell(title: "Количество двигателей", value: String(rocket.secondStage.engines)),
-                    Cell(title: "Количество топлива", value: String(rocket.secondStage.fuelAmountTons)),
-                    Cell(title: "Время сгорания", value: String(rocket.secondStage.burnTimeSec ?? 0))
+                    Cell(title: "Время сгорания", value: String(rocket.firstStage.burnTimeSec ?? 0))
                 ]
+            ),
+            Section(
+                type: .secondStage,
+                cells:
+                    [
+                        Cell(title: "Количество двигателей", value: String(rocket.secondStage.engines)),
+                        Cell(title: "Количество топлива", value: String(rocket.secondStage.fuelAmountTons)),
+                        Cell(title: "Время сгорания", value: String(rocket.secondStage.burnTimeSec ?? 0))
+                    ]
             ),
             Section(
                 type: .launches,
@@ -106,33 +129,71 @@ class PageDetailViewController: UIViewController {
         ]
     }
 
+//MARK: - createDataSource
+
     func createDataSource() {
         dataSource = .init(collectionView: collectionView) { (collectionView, indexPath, model) in
-            let section = SectionType(rawValue: indexPath.section) ?? .info
+            let section = SectionType(rawValue: indexPath.section) ?? .mainSection
             switch section {
             case .imageLabel:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseId, for: indexPath) as? ImageCollectionViewCell
+                func image(data: Data?) -> UIImage? {
+                  if let data = data {
+                    return UIImage(data: data)
+                  }
+                  return UIImage(systemName: "img1")
+                }
+                self.networkAPI.image(post: self.rockets[self.index]) { data, error  in
+                  let img = image(data: data)
+                  DispatchQueue.main.async {
+                      cell?.image = img
+                  }
+                }
                 cell?.configure(with: model)
                 return cell
             case .params:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCollectionViewCell.reuseId, for: indexPath) as? HorizontalCollectionViewCell
                 cell?.configure(with: model)
                 return cell
-            case .info:
+            case .mainSection:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCollectionViewCell.reuseId, for: indexPath) as? VerticalCollectionViewCell
+                cell?.configure(with: model)
+                return cell
+            case .firstStage:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCollectionViewCell.reuseId, for: indexPath) as? VerticalCollectionViewCell
+                cell?.configure(with: model)
+                return cell
+            case .secondStage:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCollectionViewCell.reuseId, for: indexPath) as? VerticalCollectionViewCell
                 cell?.configure(with: model)
                 return cell
             case .launches:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonCollectionViewCell.reuseId, for: indexPath) as? ButtonCollectionViewCell
+                cell?.cellDelegate = self
                 return cell
             }
         }
+        dataSource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
+            return self.supplementary(collectionView: collectionView, kind: kind, indexPath: indexPath)
+        }
+    }
+
+    func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId, for: indexPath) as! StagesHeaderView
+        if indexPath.section == 3 {
+            header.configure(with: "Первая ступень")
+        } else {
+            header.configure(with: "Вторая ступень")
+        }
+
+        return header
     }
 
     func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<SectionType, Cell>()
-        let rocket = rockets?.first! // в каждом pageDetailViewController будет своя рокета
-        let sections = makeSections(from: rocket!)
+        let rocket = rockets[index] // в каждом pageDetailViewController будет своя рокета
+        let sections = makeSections(from: rocket)
 
         sections.forEach { section in
             snapshot.appendSections([section.type])
@@ -141,7 +202,10 @@ class PageDetailViewController: UIViewController {
 
         dataSource?.apply(snapshot)
     }
+
     
+    //MARK: - createLayout
+
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             guard let sectionKind = SectionType(rawValue: sectionIndex) else { return nil }
@@ -159,8 +223,12 @@ class PageDetailViewController: UIViewController {
             return imageLabelSection()
         case .params:
             return paramsSection()
-        case .info:
-            return infoSection()
+        case .mainSection:
+            return mainSection()
+        case .firstStage:
+            return firstStage()
+        case .secondStage:
+            return secondStage()
         case.launches:
             return launchesSection()
         }
@@ -197,7 +265,7 @@ class PageDetailViewController: UIViewController {
         return section
     }
     
-    private func infoSection() -> NSCollectionLayoutSection {
+    private func mainSection() -> NSCollectionLayoutSection {
         let trailingItem =  NSCollectionLayoutItem(layoutSize:
                                                     NSCollectionLayoutSize(
                                                         widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0),
@@ -213,8 +281,57 @@ class PageDetailViewController: UIViewController {
 
         let section = NSCollectionLayoutSection(group: containerGroup)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
-        // section.supplementariesFollowContentInsets = true
+        return section
+    }
 
+    private func firstStage() -> NSCollectionLayoutSection {
+        let trailingItem =  NSCollectionLayoutItem(layoutSize:
+                                                    NSCollectionLayoutSize(
+                                                        widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0),
+                                                        heightDimension: .fractionalHeight(1.0)))
+        trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        let trailingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
+
+        let trailingGroup =  NSCollectionLayoutGroup.vertical(layoutSize: trailingGroupSize, subitem: trailingItem, count: 9)
+
+        let containerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),  heightDimension: .fractionalHeight(0.6))
+
+        let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: containerGroupSize, subitems: [trailingGroup])
+
+        let section = NSCollectionLayoutSection(group: containerGroup)
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60))
+
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
+        return section
+    }
+
+    private func secondStage() -> NSCollectionLayoutSection {
+        let trailingItem =  NSCollectionLayoutItem(layoutSize:
+                                                    NSCollectionLayoutSize(
+                                                        widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0),
+                                                        heightDimension: .fractionalHeight(1.0)))
+        trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        let trailingGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1.0))
+
+        let trailingGroup =  NSCollectionLayoutGroup.vertical(layoutSize: trailingGroupSize, subitem: trailingItem, count: 9)
+
+        let containerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),  heightDimension: .fractionalHeight(0.6))
+
+        let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: containerGroupSize, subitems: [trailingGroup])
+
+        let section = NSCollectionLayoutSection(group: containerGroup)
+
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(70))
+
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
+        // section.supplementariesFollowContentInsets = true
         return section
     }
     
@@ -233,164 +350,3 @@ class PageDetailViewController: UIViewController {
         return section
     }
 }
-
-
-
-
-
-
-
-
-
-
-//        let itemSize = NSCollectionLayoutSize (
-//            widthDimension: .fractionalWidth(0.2),
-//            heightDimension: .fractionalHeight(1.0)
-//        )
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//
-//        let groupSize = NSCollectionLayoutSize (
-//            widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .absolute(50)
-//        )
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-//
-//        group.interItemSpacing = .fixed(5)
-//
-//        let section = NSCollectionLayoutSection(group: group)
-//
-//        section.interGroupSpacing = 5
-//
-//        let layout = UICollectionViewCompositionalLayout(section: section)
-//
-//        let config = UICollectionViewCompositionalLayoutConfiguration()
-//        config.interSectionSpacing = 200
-//        layout.configuration = config
-//
-//        return layout
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    func setupCollectionView() {
-//        collectionView.register(HorizontalCollectionViewCell.self, forCellWithReuseIdentifier: HorizontalCollectionViewCell.reuseId)
-//        collectionView.register(VerticalCollectionViewCell.self, forCellWithReuseIdentifier: VerticalCollectionViewCell.reuseId)
-//    }
-
-//    func createDataSource() {
-//        dataSource = .init(collectionView: collectionView) { (collectionView, indexPath, model) in
-//            let section = SectionType(rawValue: indexPath.section) ?? .info
-//            switch section {
-//            case .parameters:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCollectionViewCell.reuseId, for: indexPath) as? HorizontalCollectionViewCell
-//                let model = self.paramsArray[indexPath.row]
-//                cell?.configure(with: model)
-//                return cell
-//            case .info:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCollectionViewCell.reuseId, for: indexPath) as? VerticalCollectionViewCell
-//                let model = self.infoArray[indexPath.row]
-//                cell?.configure(with: model)
-//                return cell
-//            }
-//        }
-//    }
-//
-//    func reloadData() {
-//        var snapshot = NSDiffableDataSourceSnapshot<SectionType, Cell>()
-//        let rocket = rockets?.first // в каждом pageDetailViewController будет своя рокета
-//        let sections = makeSections(from: rocket!)
-//
-//        sections.forEach { section in
-//            snapshot.appendSections([section.type])
-//            snapshot.appendItems(section.cells, toSection: section.type)
-//        }
-//
-//        dataSource?.apply(snapshot)
-//    }
-//
-//
-//
-//    // MARK: - Setup Layout
-//
-//    func createCompositionalLayout() -> UICollectionViewLayout {
-//        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-//            let section = self.dataSource?.snapshot().sectionIdentifiers[sectionIndex]
-//
-//            switch section {
-//            case .parameters:
-//                return self.createDetailParametersSection()
-//            default:
-//                return self.createMainInfoSection()
-//            }
-//        }
-//
-//        return layout
-//    }
-//
-//    func createDetailParametersSection() -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-//                                              heightDimension: .fractionalHeight(1))
-//        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-//        layoutItem.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 8, bottom: 0, trailing: 8)
-//
-//
-//        let layoutGroupSize = NSCollectionLayoutSize(widthDimension: .estimated(104),
-//                                                     heightDimension: .estimated(88))
-//        let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: layoutGroupSize, subitems: [layoutItem])
-//
-//        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
-//        layoutSection.orthogonalScrollingBehavior = .continuous
-//        layoutSection.contentInsets = NSDirectionalEdgeInsets.init(top: 66, leading: 12, bottom: 0, trailing: 12)
-//
-//        return layoutSection
-//    }
-//
-//    func createMainInfoSection() -> NSCollectionLayoutSection {
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(86))
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        item.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 8, trailing: 0)
-//
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-//                                               heightDimension: .estimated(1))
-//        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-//
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.contentInsets = NSDirectionalEdgeInsets.init(top: 66, leading: 20, bottom: 0, trailing: 20)
-//        return section
-//    }
-//}
-//
-//
-//extension PageDetailViewController: UICollectionViewDataSource {
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 5
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 10
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-//
-//        cell.backgroundColor = UIColor.systemPink
-//
-//        return cell
-//    }
-//}
-
-
