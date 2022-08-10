@@ -28,7 +28,7 @@ struct Section {
     let cells: [Cell]
 }
 
-class PageDetailViewController: UIViewController, CallLaunchesVCProtocol {
+class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSettingsVCProtocol {
 
     let networkAPI = NetworkAPI.shared
     var rockets: [RocketModel] = []
@@ -56,6 +56,12 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol {
 
     func presentLaunchesViewController() {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchesViewController") as! LaunchesViewController
+        viewController.rocketID = rockets[self.index].id
+        self.present(viewController, animated: true, completion: nil)
+    }
+
+    func presentSettingsViewController() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.present(viewController, animated: true, completion: nil)
     }
     
@@ -150,6 +156,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol {
                   }
                 }
                 cell?.configure(with: model)
+                cell?.cellDelegate = self
                 return cell
             case .params:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCollectionViewCell.reuseId, for: indexPath) as? HorizontalCollectionViewCell

@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="417"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-1d-gLl">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-1d-gLl">
                         <rect key="frame" x="0.0" y="0.0" width="377" height="417"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSN-P7-t9F">
@@ -42,7 +42,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="gear"/>
                                 <connections>
-                                    <action selector="settingsButton" destination="gTV-IL-0wX" eventType="touchUpInside" id="JMM-ER-kek"/>
+                                    <action selector="presentSettingsViewController:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bKr-Dc-JRG"/>
                                 </connections>
                             </button>
                         </subviews>

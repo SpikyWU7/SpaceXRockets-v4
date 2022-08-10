@@ -24,6 +24,7 @@ class RocketCell: UITableViewCell {
 
     func initCell(with data: LaunchDates) {
             rocketCellLabel.text = data.name
+        rocketCellDate.text = data.dateUtc
         
 //            rocketCellDate.text = format.strToDate(date: data.dateUtc)
 

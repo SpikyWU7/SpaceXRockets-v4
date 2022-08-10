@@ -15,6 +15,7 @@
 		9E35C8CB287ED72E00D9A6BE /* RocketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8CA287ED72E00D9A6BE /* RocketCell.xib */; };
 		9E35C8CD287ED73800D9A6BE /* RocketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8CC287ED73800D9A6BE /* RocketCell.swift */; };
 		9E35C8CF287EDA2B00D9A6BE /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8CE287EDA2B00D9A6BE /* LaunchesViewController.swift */; };
+		9E35C8D12881A42500D9A6BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8D02881A42500D9A6BE /* SettingsViewController.swift */; };
 		9E548BE42865E99300BD62E8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BE22865E99300BD62E8 /* ImageCollectionViewCell.swift */; };
 		9E548BE52865E99300BD62E8 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E548BE32865E99300BD62E8 /* ImageCollectionViewCell.xib */; };
 		9E548BEE2865E9C500BD62E8 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E548BEC2865E9C500BD62E8 /* ButtonCollectionViewCell.swift */; };
@@ -43,6 +44,7 @@
 		9E35C8CA287ED72E00D9A6BE /* RocketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketCell.xib; sourceTree = "<group>"; };
 		9E35C8CC287ED73800D9A6BE /* RocketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCell.swift; sourceTree = "<group>"; };
 		9E35C8CE287EDA2B00D9A6BE /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		9E35C8D02881A42500D9A6BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9E548BE22865E99300BD62E8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E548BE32865E99300BD62E8 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9E548BEC2865E9C500BD62E8 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */,
 				9E548BF5286B54B800BD62E8 /* PageDetailViewController.swift */,
 				9E35C8CE287EDA2B00D9A6BE /* LaunchesViewController.swift */,
+				9E35C8D02881A42500D9A6BE /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				9E627FA02861F1C500B1859B /* HorizontalCollectionViewCell.swift in Sources */,
 				9E548BE42865E99300BD62E8 /* ImageCollectionViewCell.swift in Sources */,
 				9E69CF742861D5050031CEA4 /* AppDelegate.swift in Sources */,
+				9E35C8D12881A42500D9A6BE /* SettingsViewController.swift in Sources */,
 				9E35C8C5287D999200D9A6BE /* LaunchDates.swift in Sources */,
 				9E35C8CF287EDA2B00D9A6BE /* LaunchesViewController.swift in Sources */,
 				9E627FA42861F1FC00B1859B /* VerticalCollectionViewCell.swift in Sources */,

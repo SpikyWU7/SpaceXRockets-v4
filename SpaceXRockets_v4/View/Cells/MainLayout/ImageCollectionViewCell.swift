@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol CallSettingsVCProtocol {
+    func presentSettingsViewController()
+}
+
 class ImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var rocketImage: UIImageView!
     @IBOutlet var rocketName: UILabel!
     @IBOutlet var labelView: UIView!
+    var cellDelegate: CallSettingsVCProtocol!
 
     var image: UIImage? {
       didSet {
@@ -25,15 +30,11 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         labelView.layer.cornerRadius = 15
     }
-
-    @IBAction func settingsButton() {
+    @IBAction func presentSettingsViewController(_ sender: UIButton) {
+        self.cellDelegate.presentSettingsViewController()
     }
 
     func configure(with info: Cell) {
         rocketName.text = info.value
     }
-
-
-
-
 }
