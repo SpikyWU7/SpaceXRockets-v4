@@ -61,112 +61,6 @@
             </objects>
             <point key="canvasLocation" x="1841.25" y="78.16901408450704"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="pzM-hp-XwO">
-            <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="P5g-4Y-evD" customClass="SettingsViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GvZ-3J-Gyf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrs-uL-8nM">
-                                <rect key="frame" x="16" y="194" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diametr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-wX-oAH">
-                                <rect key="frame" x="16" y="247" width="61" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poleznaya nagruzo4ka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYA-MZ-xol">
-                                <rect key="frame" x="16" y="353" width="172" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9c-Ef-aS6">
-                                <rect key="frame" x="16" y="300" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f56-hi-LdC">
-                                <rect key="frame" x="203" y="189" width="101" height="32"/>
-                                <segments>
-                                    <segment title="m" width="50"/>
-                                    <segment title="ft" width="50"/>
-                                </segments>
-                                <connections>
-                                    <action selector="heightChanged:" destination="P5g-4Y-evD" eventType="valueChanged" id="qxY-6w-fqx"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Hg-Hm-HnV">
-                                <rect key="frame" x="203" y="242" width="101" height="32"/>
-                                <segments>
-                                    <segment title="m" width="50"/>
-                                    <segment title="ft" width="50"/>
-                                </segments>
-                                <connections>
-                                    <action selector="diameterChanged:" destination="P5g-4Y-evD" eventType="valueChanged" id="a2R-RB-aUa"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h1r-FP-0bU">
-                                <rect key="frame" x="203" y="295" width="101" height="32"/>
-                                <segments>
-                                    <segment title="kg" width="50"/>
-                                    <segment title="lb" width="50"/>
-                                </segments>
-                                <connections>
-                                    <action selector="massChanged:" destination="P5g-4Y-evD" eventType="valueChanged" id="Vqk-4n-ZAX"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hNg-1C-uYk">
-                                <rect key="frame" x="203" y="348" width="101" height="32"/>
-                                <segments>
-                                    <segment title="kg" width="50"/>
-                                    <segment title="lb" width="50"/>
-                                </segments>
-                                <connections>
-                                    <action selector="payloadChanged:" destination="P5g-4Y-evD" eventType="valueChanged" id="aBB-bq-XFe"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Lgp-Ii-gJC"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                        <constraints>
-                            <constraint firstItem="wYA-MZ-xol" firstAttribute="leading" secondItem="Lgp-Ii-gJC" secondAttribute="leading" constant="16" id="72E-k4-YIa"/>
-                            <constraint firstItem="wYA-MZ-xol" firstAttribute="top" secondItem="U9c-Ef-aS6" secondAttribute="bottom" constant="32" id="Kha-sK-en7"/>
-                            <constraint firstItem="hNg-1C-uYk" firstAttribute="top" secondItem="h1r-FP-0bU" secondAttribute="bottom" constant="22" id="LfV-Ni-n8U"/>
-                            <constraint firstItem="lrs-uL-8nM" firstAttribute="top" secondItem="Lgp-Ii-gJC" secondAttribute="top" constant="150" id="RnN-mi-trA"/>
-                            <constraint firstItem="Lgp-Ii-gJC" firstAttribute="trailing" secondItem="f56-hi-LdC" secondAttribute="trailing" constant="16" id="SeH-wC-jOV"/>
-                            <constraint firstItem="Lgp-Ii-gJC" firstAttribute="trailing" secondItem="9Hg-Hm-HnV" secondAttribute="trailing" constant="16" id="Tw0-Dg-m6F"/>
-                            <constraint firstItem="U9c-Ef-aS6" firstAttribute="top" secondItem="YZL-wX-oAH" secondAttribute="bottom" constant="32" id="VXW-I9-v2E"/>
-                            <constraint firstItem="U9c-Ef-aS6" firstAttribute="leading" secondItem="Lgp-Ii-gJC" secondAttribute="leading" constant="16" id="Wzv-BL-d3q"/>
-                            <constraint firstItem="YZL-wX-oAH" firstAttribute="top" secondItem="lrs-uL-8nM" secondAttribute="bottom" constant="32" id="dXx-aZ-eRb"/>
-                            <constraint firstItem="f56-hi-LdC" firstAttribute="top" secondItem="Lgp-Ii-gJC" secondAttribute="top" constant="145" id="kTe-Sc-35w"/>
-                            <constraint firstItem="YZL-wX-oAH" firstAttribute="leading" secondItem="Lgp-Ii-gJC" secondAttribute="leading" constant="16" id="koF-Z7-Dah"/>
-                            <constraint firstItem="Lgp-Ii-gJC" firstAttribute="trailing" secondItem="h1r-FP-0bU" secondAttribute="trailing" constant="16" id="lBY-7N-5uq"/>
-                            <constraint firstItem="h1r-FP-0bU" firstAttribute="top" secondItem="9Hg-Hm-HnV" secondAttribute="bottom" constant="22" id="pgn-eg-s75"/>
-                            <constraint firstItem="lrs-uL-8nM" firstAttribute="leading" secondItem="Lgp-Ii-gJC" secondAttribute="leading" constant="16" id="wUK-1v-UrB"/>
-                            <constraint firstItem="9Hg-Hm-HnV" firstAttribute="top" secondItem="f56-hi-LdC" secondAttribute="bottom" constant="22" id="yYf-wD-5Aq"/>
-                            <constraint firstItem="Lgp-Ii-gJC" firstAttribute="trailing" secondItem="hNg-1C-uYk" secondAttribute="trailing" constant="16" id="zKh-gf-7CD"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="bZt-LF-ABM"/>
-                    <connections>
-                        <outlet property="segmentDiameter" destination="9Hg-Hm-HnV" id="wCN-wo-ZxI"/>
-                        <outlet property="segmentHeight" destination="f56-hi-LdC" id="n4K-HK-ryb"/>
-                        <outlet property="segmentMass" destination="h1r-FP-0bU" id="pSU-zn-TbO"/>
-                        <outlet property="segmentPayload" destination="hNg-1C-uYk" id="AQF-it-ME1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sp0-eO-52u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3768.75" y="77.112676056338032"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3aM-F0-3GX">
             <objects>
@@ -248,12 +142,53 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="P5g-4Y-evD" kind="relationship" relationship="rootViewController" id="UYu-pS-PaC"/>
+                        <segue destination="1FR-cH-Clk" kind="show" id="1hF-is-SuQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pFf-oJ-Rlf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2768" y="79"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="dnZ-fV-uY3">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1FR-cH-Clk" customClass="SettingsViewController" customModule="SpaceXRockets_v4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9NL-md-sVp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyu-5j-WtO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                <items>
+                                    <navigationItem title="Настройки" id="dmh-xH-OAp">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="CWj-Tu-wzQ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YOl-tK-x4r">
+                                                <rect key="frame" x="213.5" y="11" width="90.5" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
+                                                <connections>
+                                                    <action selector="dismissPressed:" destination="1FR-cH-Clk" eventType="touchUpInside" id="urT-Dr-tcn"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yGe-FY-EFS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nyu-5j-WtO" firstAttribute="trailing" secondItem="yGe-FY-EFS" secondAttribute="trailing" id="L3i-Tf-5GW"/>
+                            <constraint firstItem="nyu-5j-WtO" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" id="cqD-i8-Ehy"/>
+                            <constraint firstItem="nyu-5j-WtO" firstAttribute="top" secondItem="yGe-FY-EFS" secondAttribute="top" id="ofQ-yd-vG8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zpT-R1-PxF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tcq-wf-giJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3604" y="79"/>
         </scene>
     </scenes>
     <resources>
