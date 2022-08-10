@@ -57,6 +57,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     func presentLaunchesViewController() {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchesViewController") as! LaunchesViewController
         viewController.rocketID = rockets[self.index].id
+        viewController.rocketName = rockets[self.index].name
         self.present(viewController, animated: true, completion: nil)
     }
 

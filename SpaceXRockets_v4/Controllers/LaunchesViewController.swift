@@ -11,19 +11,19 @@ import UIKit
 class LaunchesViewController: UIViewController {
 
     @IBOutlet private var launchesTable: UITableView!
-
+    @IBOutlet var navItem: UINavigationBar!
     private var newArray: [LaunchDates] = []
     private let networkAPI = NetworkAPI()
     var dataArray = ["AAA", "BBB", "CCC"]
     var rocketID: String?
+    var rocketName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navItem.topItem?.title = rocketName
         launchesTable.dataSource = self
         launchesTable.backgroundColor = .blue
         launchesTable.register(UINib(nibName: RocketCell.reuseId, bundle: nil), forCellReuseIdentifier: RocketCell.reuseId)
-
-
         networkAPI.getLaunches { [self] (result) in
             switch result {
             case .success(let launches):
@@ -48,30 +48,19 @@ class LaunchesViewController: UIViewController {
 
 extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if newArray.count == 0 {
-            self.launchesTable.setEmptyMessage("На данный момент запусков не производилось")
-        } else {
+        if newArray.count != 0 {
             self.launchesTable.restore()
+        } else {
+            self.launchesTable.setEmptyMessage("На данный момент запусков не производилось")
         }
         return newArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        if let cell = launchesTable.dequeueReusableCell(withIdentifier: "RocketCell", for: indexPath) as? RocketCell {
-        //            cell.setData(text: newArray[indexPath.row].name ?? "no data")
-        //            return cell
-        //        }
-
         guard let cell = launchesTable.dequeueReusableCell(withIdentifier: "RocketCell") as? RocketCell else { return UITableViewCell() }
-
+        cell.initCell(with: newArray[indexPath.row])
         cell.backgroundColor = .black
         cell.selectionStyle = .none
-
-        guard let name = newArray[indexPath.row].name else { return UITableViewCell() }
-        cell.rocketCellLabel.text = name
-
-        cell.rocketCellDate.text = newArray[indexPath.row].dateUtc
-
         if newArray[indexPath.row].success != nil {
             if newArray[indexPath.row].success! {
                 cell.rocketImage.image = UIImage(named: "rocketTrue")
@@ -83,42 +72,6 @@ extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
-
-
-
-
-
-
-
-
-
-    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        return newArray.count
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let cell = launchesTable.dequeueReusableCell(withIdentifier: "RocketCell") as! RocketCell
-    //
-    //        cell.backgroundColor = .black
-    //        cell.selectionStyle = .none
-    //
-    //        if let name = newArray[indexPath.row].name {
-    //            cell.rocketCellLabel.text = name
-    //        }
-    //
-    //        cell.rocketCellDate.text = newArray[indexPath.row].dateUtc
-    //
-    //        if newArray[indexPath.row].success != nil {
-    //            if newArray[indexPath.row].success! {
-    //                cell.rocketImage.image = UIImage(named: "rocketTrue")
-    //            } else {
-    //                cell.rocketImage.image = UIImage(named: "rocketFalse")
-    //            }
-    //        } else {
-    //            cell.rocketImage.image = UIImage(named: "unknown")
-    //        }
-    //        return cell
-    //    }
 }
 
 extension UITableView {
@@ -130,7 +83,6 @@ extension UITableView {
         messageLabel.textAlignment = .center
         messageLabel.font = UIFont(name: "TrebuchetMS", size: 20)
         messageLabel.sizeToFit()
-
         self.backgroundView = messageLabel
         self.separatorStyle = .none
     }
@@ -140,24 +92,3 @@ extension UITableView {
         self.separatorStyle = .singleLine
     }
 }
-
-
-
-
-
-//        launchesTable.delegate = self
-//        title = "Запуски"
-//        launchesTable.register(UINib(nibName: "RocketCell", bundle: nil),
-//                                 forCellReuseIdentifier: "RocketCell")
-//        networkAPI.getLaunches { [self] (result) in
-//            switch result {
-//            case .success(let launches):
-//                print(launches)
-//                for element in launches {
-//                    self.newArray.append(element)
-//                }
-//                self.launchesTable.reloadData()
-//            case .failure(_):
-//                print("Error")
-//            }
-//        }

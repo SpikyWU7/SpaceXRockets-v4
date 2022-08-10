@@ -23,23 +23,8 @@ class RocketCell: UITableViewCell {
     }
 
     func initCell(with data: LaunchDates) {
-            rocketCellLabel.text = data.name
+        rocketCellLabel.text = data.name
         rocketCellDate.text = data.dateUtc
-        
-//            rocketCellDate.text = format.strToDate(date: data.dateUtc)
 
-        if let data = data.success { // Fix логику убрать из ячейки передавать уже выбранную картинку
-            if data {
-                rocketImage.image = UIImage(named: "rocketTrue")
-            } else {
-                rocketImage.image = UIImage(named: "rocketFalse")
-            }
-        } else {
-            rocketImage.image = UIImage(named: "unknown")
-        }
-    }
-
-    func setData(text: String) {
-        self.rocketCellLabel.text = text
     }
 }
