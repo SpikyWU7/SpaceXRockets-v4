@@ -157,6 +157,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Высота" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajg-Jj-aeC" userLabel="Высота">
+                                <rect key="frame" x="20" y="136" width="67.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyu-5j-WtO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <items>
@@ -175,20 +181,107 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dby-hO-4df">
+                                <rect key="frame" x="204" y="133" width="100" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="HhX-ic-GUW"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="m"/>
+                                    <segment title="ft"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-Ld-qnu" userLabel="Высота">
+                                <rect key="frame" x="20" y="210" width="152" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="hJj-cH-GtJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-3u-COr">
+                                <rect key="frame" x="204" y="207" width="100" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Hk8-Lr-WUp"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="m"/>
+                                    <segment title="ft"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Масса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkE-fc-5lG" userLabel="Высота">
+                                <rect key="frame" x="20" y="284" width="152" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="HYd-tJ-6vZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-uh-Qne">
+                                <rect key="frame" x="204" y="281" width="100" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Cps-Kv-TXw"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="m"/>
+                                    <segment title="ft"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полезная нагрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-KZ-qCS" userLabel="Высота">
+                                <rect key="frame" x="20" y="358" width="175.5" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="MIg-oX-k26"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qec-wb-KLX">
+                                <rect key="frame" x="204" y="355" width="100" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="d1H-WS-oDJ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="m"/>
+                                    <segment title="ft"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yGe-FY-EFS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ZkE-fc-5lG" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" constant="20" id="2pR-AT-dzH"/>
+                            <constraint firstItem="ITE-KZ-qCS" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" constant="20" id="4lT-sE-kte"/>
+                            <constraint firstItem="SXc-3u-COr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nGM-Ld-qnu" secondAttribute="trailing" constant="8" symbolic="YES" id="8zN-zb-Pqs"/>
+                            <constraint firstItem="yGe-FY-EFS" firstAttribute="trailing" secondItem="ggf-uh-Qne" secondAttribute="trailing" constant="16" id="B12-i8-zim"/>
+                            <constraint firstItem="yGe-FY-EFS" firstAttribute="trailing" secondItem="qec-wb-KLX" secondAttribute="trailing" constant="16" id="J4h-FL-KAi"/>
                             <constraint firstItem="nyu-5j-WtO" firstAttribute="trailing" secondItem="yGe-FY-EFS" secondAttribute="trailing" id="L3i-Tf-5GW"/>
+                            <constraint firstItem="yGe-FY-EFS" firstAttribute="trailing" secondItem="dby-hO-4df" secondAttribute="trailing" constant="16" id="bEZ-Zk-lsn"/>
+                            <constraint firstItem="nGM-Ld-qnu" firstAttribute="top" secondItem="Ajg-Jj-aeC" secondAttribute="bottom" constant="50" id="bTk-bi-Y7y"/>
+                            <constraint firstItem="Ajg-Jj-aeC" firstAttribute="top" secondItem="nyu-5j-WtO" secondAttribute="bottom" constant="80" id="byj-pL-jfT"/>
                             <constraint firstItem="nyu-5j-WtO" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" id="cqD-i8-Ehy"/>
+                            <constraint firstItem="ggf-uh-Qne" firstAttribute="top" secondItem="SXc-3u-COr" secondAttribute="bottom" constant="43" id="crf-Ta-Ehy"/>
+                            <constraint firstItem="dby-hO-4df" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ajg-Jj-aeC" secondAttribute="trailing" constant="8" symbolic="YES" id="gNr-n0-FwG"/>
+                            <constraint firstItem="ZkE-fc-5lG" firstAttribute="top" secondItem="nGM-Ld-qnu" secondAttribute="bottom" constant="50" id="hMj-oh-f4J"/>
+                            <constraint firstItem="qec-wb-KLX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ITE-KZ-qCS" secondAttribute="trailing" constant="8" symbolic="YES" id="joU-db-1cW"/>
+                            <constraint firstItem="SXc-3u-COr" firstAttribute="top" secondItem="dby-hO-4df" secondAttribute="bottom" constant="43" id="kX3-vy-KD4"/>
+                            <constraint firstItem="dby-hO-4df" firstAttribute="top" secondItem="nyu-5j-WtO" secondAttribute="bottom" constant="77" id="lU8-tA-qQh"/>
+                            <constraint firstItem="yGe-FY-EFS" firstAttribute="trailing" secondItem="SXc-3u-COr" secondAttribute="trailing" constant="16" id="lfr-67-Xb1"/>
                             <constraint firstItem="nyu-5j-WtO" firstAttribute="top" secondItem="yGe-FY-EFS" secondAttribute="top" id="ofQ-yd-vG8"/>
+                            <constraint firstItem="ITE-KZ-qCS" firstAttribute="top" secondItem="ZkE-fc-5lG" secondAttribute="bottom" constant="50" id="onZ-53-whd"/>
+                            <constraint firstItem="nGM-Ld-qnu" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" constant="20" id="pAm-he-qv8"/>
+                            <constraint firstItem="Ajg-Jj-aeC" firstAttribute="leading" secondItem="yGe-FY-EFS" secondAttribute="leading" constant="20" id="wrN-yN-KwV"/>
+                            <constraint firstItem="ggf-uh-Qne" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZkE-fc-5lG" secondAttribute="trailing" constant="8" symbolic="YES" id="xjA-kh-bkZ"/>
+                            <constraint firstItem="qec-wb-KLX" firstAttribute="top" secondItem="ggf-uh-Qne" secondAttribute="bottom" constant="43" id="yBh-eM-KV4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zpT-R1-PxF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcq-wf-giJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="79"/>
+            <point key="canvasLocation" x="3603.75" y="78.16901408450704"/>
         </scene>
     </scenes>
     <resources>
