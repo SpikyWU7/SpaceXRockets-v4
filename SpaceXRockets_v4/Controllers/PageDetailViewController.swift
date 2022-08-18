@@ -11,7 +11,7 @@ struct Cell: Hashable {
     let id = UUID()
     let title: String
     let value: String
-//    let units: String
+    //    let units: String
 }
 
 enum SectionType: Int, CaseIterable {
@@ -42,6 +42,11 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         navigationItem.title = "Rocket"
         setupCollectionView()
         createDataSource()
+        reload()
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reloadData"), object: nil)
+    }
+
+    @objc func reload() {
         networkAPI.getRockets(dataType: [RocketModel].self) { data in
             self.rockets = data
             self.reloadData()
@@ -97,10 +102,18 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
             Section(
                 type: .params,
                 cells: [
-                    Cell(title: "Высота", value: String(rocket.height.meters)),
-                    Cell(title: "Диаметр", value: String(rocket.diameter.meters)),
-                    Cell(title: "Масса", value: String(rocket.mass.kg)),
-                    Cell(title: "Нагрузка", value: String(rocket.payloadWeights[0].kg))
+                    UserDefaults.standard.string(forKey: K.height) == K.m
+                    ? Cell(title: "Высота, ft", value: String(rocket.height.feet))
+                    : Cell(title: "Высота, m", value: String(rocket.height.meters)),
+                    UserDefaults.standard.string(forKey: K.diameter) == K.m
+                    ? Cell(title: "Диаметр, ft", value: String(rocket.diameter.feet))
+                    : Cell(title: "Диаметр, m", value: String(rocket.diameter.meters)),
+                    UserDefaults.standard.string(forKey: K.mass) == K.kg
+                    ? Cell(title: "Масса, lb", value: String(rocket.mass.lbInt))
+                    : Cell(title: "Масса, kg", value: String(rocket.mass.kgInt)),
+                    UserDefaults.standard.string(forKey: K.payweight) == K.kg
+                    ? Cell(title: "Нагрузка, lb", value: String(rocket.payloadWeights[0].lbInt))
+                    : Cell(title: "Нагрузка, kg", value: String(rocket.payloadWeights[0].kgInt))
                 ]
             ),
             Section(
@@ -136,7 +149,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         ]
     }
 
-//MARK: - createDataSource
+    //MARK: - createDataSource
 
     func createDataSource() {
         dataSource = .init(collectionView: collectionView) { (collectionView, indexPath, model) in
@@ -145,16 +158,16 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
             case .imageLabel:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.reuseId, for: indexPath) as? ImageCollectionViewCell
                 func image(data: Data?) -> UIImage? {
-                  if let data = data {
-                    return UIImage(data: data)
-                  }
-                  return UIImage(systemName: "img1")
+                    if let data = data {
+                        return UIImage(data: data)
+                    }
+                    return UIImage(systemName: "img1")
                 }
                 self.networkAPI.image(post: self.rockets[self.index]) { data, error  in
-                  let img = image(data: data)
-                  DispatchQueue.main.async {
-                      cell?.image = img
-                  }
+                    let img = image(data: data)
+                    DispatchQueue.main.async {
+                        cell?.image = img
+                    }
                 }
                 cell?.configure(with: model)
                 cell?.cellDelegate = self
@@ -187,14 +200,12 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     }
 
     func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
-        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId, for: indexPath) as! StagesHeaderView
         if indexPath.section == 3 {
             header.configure(with: "Первая ступень")
         } else {
             header.configure(with: "Вторая ступень")
         }
-
         return header
     }
 
@@ -202,17 +213,23 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         var snapshot = NSDiffableDataSourceSnapshot<SectionType, Cell>()
         let rocket = rockets[index] // в каждом pageDetailViewController будет своя рокета
         let sections = makeSections(from: rocket)
-
         sections.forEach { section in
             snapshot.appendSections([section.type])
             snapshot.appendItems(section.cells, toSection: section.type)
         }
-
         dataSource?.apply(snapshot)
     }
+}
 
-    
-    //MARK: - createLayout
+
+
+
+
+
+
+
+//MARK: - createLayout
+extension PageDetailViewController {
 
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in

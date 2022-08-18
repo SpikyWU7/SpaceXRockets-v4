@@ -35,11 +35,23 @@ extension RocketModel {
     struct Mass: Decodable, Hashable {
         let kg: Double
         let lb: Double
+        var kgInt: Int {
+            Int(kg)
+        }
+        var lbInt: Int {
+            Int(lb)
+        }
     }
 
     struct PayloadWeights: Decodable, Hashable {
         let kg: Double
         let lb: Double
+        var kgInt: Int {
+            Int(kg)
+        }
+        var lbInt: Int {
+            Int(lb)
+        }
     }
 
     struct FirstStage: Decodable, Hashable {
