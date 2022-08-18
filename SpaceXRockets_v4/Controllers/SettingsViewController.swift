@@ -13,6 +13,10 @@ struct K {
     static let diameter = "Diameter"
     static let mass = "Mass"
     static let payweight = "PayloadWeights"
+    static let m = "m"
+    static let ft = "ft"
+    static let kg = "kg"
+    static let lb = "lb"
 }
 
 class SettingsViewController: UIViewController {
@@ -27,46 +31,40 @@ class SettingsViewController: UIViewController {
         setupSegmentState()
     }
 
-    private func setupSegmentState() {
-        if UserDefaults.standard.string(forKey: K.height) ==  "m" {
-            heightSegControl.selectedSegmentIndex = 1
-        } else {
-            heightSegControl.selectedSegmentIndex = 0
-        }
-        if UserDefaults.standard.string(forKey: K.diameter) ==  "m" {
-            diameterSegControl.selectedSegmentIndex = 1
-        } else {
-            diameterSegControl.selectedSegmentIndex = 0
-        }
-        if UserDefaults.standard.string(forKey: K.mass) ==  "kg" {
-            massSegControl.selectedSegmentIndex = 1
-        } else {
-            massSegControl.selectedSegmentIndex = 0
-        }
-        if UserDefaults.standard.string(forKey: K.payweight) ==  "kg" {
-            payweightSegControl.selectedSegmentIndex = 1
-        } else {
-            payweightSegControl.selectedSegmentIndex = 0
-        }
-    }
-
     @IBAction func heightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? "m" : "ft", forKey: K.height)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.m : K.ft, forKey: K.height)
     }
 
     @IBAction func diameterChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? "m" : "ft", forKey: K.diameter)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.m : K.ft, forKey: K.diameter)
     }
 
     @IBAction func massChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? "kg" : "lb", forKey: K.mass)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.kg : K.lb, forKey: K.mass)
     }
 
     @IBAction func payweightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? "kg" : "lb", forKey: K.payweight)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.kg : K.lb, forKey: K.payweight)
     }
 
     @IBAction func dismissPressed(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
+    }
+}
+
+extension SettingsViewController {
+    private func setupSegmentState() {
+        UserDefaults.standard.string(forKey: K.height) == K.m
+        ? (heightSegControl.selectedSegmentIndex = 1)
+        : (heightSegControl.selectedSegmentIndex = 0)
+        UserDefaults.standard.string(forKey: K.diameter) == K.m
+        ? (diameterSegControl.selectedSegmentIndex = 1)
+        : (diameterSegControl.selectedSegmentIndex = 0)
+        UserDefaults.standard.string(forKey: K.mass) == K.kg
+        ? (massSegControl.selectedSegmentIndex = 1)
+        : (massSegControl.selectedSegmentIndex = 0)
+        UserDefaults.standard.string(forKey: K.payweight) == K.kg
+        ? (payweightSegControl.selectedSegmentIndex = 1)
+        : (payweightSegControl.selectedSegmentIndex = 0)
     }
 }
