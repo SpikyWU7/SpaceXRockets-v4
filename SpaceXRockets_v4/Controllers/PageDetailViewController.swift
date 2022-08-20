@@ -37,7 +37,6 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     var dataSource: UICollectionViewDiffableDataSource<SectionType, Cell>! = nil
     var collectionView: UICollectionView! = nil
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
