@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0EEE7528B0F3B50038A09B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E0EEE7728B0F3B50038A09B /* Localizable.strings */; };
 		9E35C8BC2875D78E00D9A6BE /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8BB2875D78E00D9A6BE /* rocket.json */; };
 		9E35C8BE287C481000D9A6BE /* StagesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */; };
 		9E35C8C0287C49EF00D9A6BE /* StagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E0EEE7A28B0F4180038A09B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9E35C8BB2875D78E00D9A6BE /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
 		9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StagesHeaderView.xib; sourceTree = "<group>"; };
 		9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesHeaderView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */,
 				9EB4E18028AE661E00219EC0 /* Formatter.swift */,
+				9E0EEE7728B0F3B50038A09B /* Localizable.strings */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 9E69CF672861D5050031CEA4;
 			productRefGroup = 9E69CF712861D5050031CEA4 /* Products */;
@@ -254,6 +258,7 @@
 			files = (
 				9E627FA52861F1FC00B1859B /* VerticalCollectionViewCell.xib in Resources */,
 				9E548BEF2865E9C500BD62E8 /* ButtonCollectionViewCell.xib in Resources */,
+				9E0EEE7528B0F3B50038A09B /* Localizable.strings in Resources */,
 				9E35C8BC2875D78E00D9A6BE /* rocket.json in Resources */,
 				9E35C8CB287ED72E00D9A6BE /* RocketCell.xib in Resources */,
 				9E627FA12861F1C500B1859B /* HorizontalCollectionViewCell.xib in Resources */,
@@ -295,6 +300,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		9E0EEE7728B0F3B50038A09B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E0EEE7A28B0F4180038A09B /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9E69CF792861D5050031CEA4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -378,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

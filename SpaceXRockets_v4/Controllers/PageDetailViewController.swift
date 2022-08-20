@@ -119,7 +119,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
             Section(
                 type: .mainSection,
                 cells: [
-                    Cell(title: "Первый запуск", value: rocket.firstFlight),
+                    Cell(title: "Первый запуск", value: rocket.firstLaunch),
                     Cell(title: "Страна", value: rocket.country),
                     Cell(title: "Стоимость запуска", value: rocket.launchCost),
                 ]

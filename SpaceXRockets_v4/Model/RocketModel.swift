@@ -18,6 +18,13 @@ struct RocketModel: Decodable, Hashable {
     var launchCost: String {
         String(format: "$%.0f млн.", costPerLaunch / 1000000)
     }
+
+    var firstLaunch: String {
+        let strDate = "lol"
+        let strResult: String
+        strResult = strDate.strToDate(string: firstFlight)
+        return strResult
+    }
 }
 
 extension RocketModel {
@@ -58,12 +65,6 @@ extension RocketModel {
         let engines: Int
         let fuelAmountTons: Double
         let burnTimeSec: Int?
-
-        var fuel: NSAttributedString {
-            let fuelStr = String(fuelAmountTons)
-            let text = fuelStr.withBoldText(text: "New")
-            return text
-        }
     }
 
     struct SecondStage: Decodable, Hashable {

@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Высота"; ObjectID = "Ajg-Jj-aeC"; */
+"Ajg-Jj-aeC.text" = "Высота";
+
+/* Class = "UILabel"; text = "Полезная нагрузка"; ObjectID = "ITE-KZ-qCS"; */
+"ITE-KZ-qCS.text" = "Полезная нагрузка";
+
+/* Class = "UISegmentedControl"; SXc-3u-COr.segmentTitles[0] = "m"; ObjectID = "SXc-3u-COr"; */
+"SXc-3u-COr.segmentTitles[0]" = "m";
+
+/* Class = "UISegmentedControl"; SXc-3u-COr.segmentTitles[1] = "ft"; ObjectID = "SXc-3u-COr"; */
+"SXc-3u-COr.segmentTitles[1]" = "ft";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "VeE-a2-DCi"; */
+"VeE-a2-DCi.title" = "Item";
+
+/* Class = "UIButton"; configuration.title = "Назад"; ObjectID = "Xsm-8Z-EHs"; */
+"Xsm-8Z-EHs.configuration.title" = "Назад";
+
+/* Class = "UIButton"; configuration.title = "Закрыть"; ObjectID = "YOl-tK-x4r"; */
+"YOl-tK-x4r.configuration.title" = "Закрыть";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YOl-tK-x4r"; */
+"YOl-tK-x4r.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Масса"; ObjectID = "ZkE-fc-5lG"; */
+"ZkE-fc-5lG.text" = "Масса";
+
+/* Class = "UISegmentedControl"; dby-hO-4df.segmentTitles[0] = "m"; ObjectID = "dby-hO-4df"; */
+"dby-hO-4df.segmentTitles[0]" = "m";
+
+/* Class = "UISegmentedControl"; dby-hO-4df.segmentTitles[1] = "ft"; ObjectID = "dby-hO-4df"; */
+"dby-hO-4df.segmentTitles[1]" = "ft";
+
+/* Class = "UINavigationItem"; title = "Настройки"; ObjectID = "dmh-xH-OAp"; */
+"dmh-xH-OAp.title" = "Настройки";
+
+/* Class = "UISegmentedControl"; ggf-uh-Qne.segmentTitles[0] = "kg"; ObjectID = "ggf-uh-Qne"; */
+"ggf-uh-Qne.segmentTitles[0]" = "kg";
+
+/* Class = "UISegmentedControl"; ggf-uh-Qne.segmentTitles[1] = "lb"; ObjectID = "ggf-uh-Qne"; */
+"ggf-uh-Qne.segmentTitles[1]" = "lb";
+
+/* Class = "UILabel"; text = "Диаметр"; ObjectID = "nGM-Ld-qnu"; */
+"nGM-Ld-qnu.text" = "Диаметр";
+
+/* Class = "UISegmentedControl"; qec-wb-KLX.segmentTitles[0] = "kg"; ObjectID = "qec-wb-KLX"; */
+"qec-wb-KLX.segmentTitles[0]" = "kg";
+
+/* Class = "UISegmentedControl"; qec-wb-KLX.segmentTitles[1] = "lb"; ObjectID = "qec-wb-KLX"; */
+"qec-wb-KLX.segmentTitles[1]" = "lb";
+
+/* Class = "UIBarButtonItem"; title = "Назад"; ObjectID = "uw1-Z0-nUN"; */
+"uw1-Z0-nUN.title" = "Назад";

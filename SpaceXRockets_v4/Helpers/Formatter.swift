@@ -2,12 +2,18 @@ import Foundation
 import UIKit
 
 class Format {
-    func strToDate(date: Date) -> String {
-        var strDate: String
-        let dataFormat = DateFormatter() // Fix а почему форматтер каждый раз заново создается
-        dataFormat.locale = .current
-        dataFormat.dateStyle = .long
-        strDate = dataFormat.string(from: date)
+    static let formatter = Format()
+    let dateFormatter = DateFormatter()
+    let formatGet = DateFormatter()
+    let formatSet = DateFormatter()
+
+    func strToDate(string: String) -> String {
+        var date: Date
+        let strDate: String
+        formatGet.dateFormat = "yyyy-MM-dd"
+        formatSet.dateFormat = "d MMMM, yyyy"
+        date = formatGet.date(from: string)!
+        strDate = formatSet.string(from: date)
         return strDate
     }
 
@@ -46,11 +52,15 @@ struct K {
 //}
 
 extension String {
-func withBoldText(text: String, font: UIFont? = nil) -> NSAttributedString {
-  let _font = font ?? UIFont.systemFont(ofSize: 14, weight: .regular)
-  let fullString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.font: _font])
-  let boldFontAttribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: _font.pointSize)]
-  let range = (self as NSString).range(of: text)
-  fullString.addAttributes(boldFontAttribute, range: range)
-  return fullString
-}}
+    func strToDate(string: String) -> String {
+        let formatGet = DateFormatter()
+        let formatSet = DateFormatter()
+        var date: Date
+        let strDate: String
+        formatGet.dateFormat = "yyyy-MM-dd"
+        formatSet.dateFormat = "d MMMM, yyyy"
+        date = formatGet.date(from: string)!
+        strDate = formatSet.string(from: date)
+        return strDate
+    }
+}

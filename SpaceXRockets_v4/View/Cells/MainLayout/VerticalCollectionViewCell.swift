@@ -21,6 +21,12 @@ class VerticalCollectionViewCell: UICollectionViewCell {
 
     func configure(with model: Cell) {
         self.leftLabel.text = model.title
+        if model.value == "United States" {
+            self.rightLabel.text = NSLocalizedString("United States", comment: "")
+        } else if model.value == "Republic of the Marshall Islands" {
+            self.rightLabel.text = NSLocalizedString("Republic of the Marshall Islands", comment: "")
+        } else {
         self.rightLabel.text = model.value
+        }
     }
 }
