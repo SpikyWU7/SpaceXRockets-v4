@@ -30,7 +30,6 @@ struct Section {
 
 class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSettingsVCProtocol {
 
-    private let format = Format()
     let networkAPI = NetworkAPI.shared
     var rockets: [RocketModel] = []
     var index: Int = 0
@@ -71,12 +70,13 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     }
     
 
-    //MARK: - setupCollectionView
+    //MARParams: - setupCollectionView
 
     func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.bounces = false
         let headerNib = UINib(nibName: StagesHeaderView.reuseId, bundle: nil)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId)
         let nib1 = UINib(nibName: ImageCollectionViewCell.reuseId, bundle: nil)
@@ -101,16 +101,16 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
             Section(
                 type: .params,
                 cells: [
-                    UserDefaults.standard.string(forKey: K.height) == K.m
+                    UserDefaults.standard.string(forKey: Params.height.rawValue) == Params.m.rawValue
                     ? Cell(title: "Высота, ft", value: String(rocket.height.feet))
                     : Cell(title: "Высота, m", value: String(rocket.height.meters)),
-                    UserDefaults.standard.string(forKey: K.diameter) == K.m
+                    UserDefaults.standard.string(forKey: Params.diameter.rawValue) == Params.m.rawValue
                     ? Cell(title: "Диаметр, ft", value: String(rocket.diameter.feet))
                     : Cell(title: "Диаметр, m", value: String(rocket.diameter.meters)),
-                    UserDefaults.standard.string(forKey: K.mass) == K.kg
+                    UserDefaults.standard.string(forKey: Params.mass.rawValue) == Params.kg.rawValue
                     ? Cell(title: "Масса, lb", value: String(rocket.mass.lbInt))
                     : Cell(title: "Масса, kg", value: String(rocket.mass.kgInt)),
-                    UserDefaults.standard.string(forKey: K.payweight) == K.kg
+                    UserDefaults.standard.string(forKey: Params.payweight.rawValue) == Params.kg.rawValue
                     ? Cell(title: "Нагрузка, lb", value: String(rocket.payloadWeights[0].lbInt))
                     : Cell(title: "Нагрузка, kg", value: String(rocket.payloadWeights[0].kgInt))
                 ]
@@ -148,7 +148,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         ]
     }
 
-    //MARK: - createDataSource
+    //MARParams: - createDataSource
 
     func createDataSource() {
         dataSource = .init(collectionView: collectionView) { (collectionView, indexPath, model) in
@@ -221,13 +221,13 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
 }
 
 
-//MARK: - createLayout
+//MARParams: - createLayout
 extension PageDetailViewController {
 
     private func createLayout() -> UICollectionViewLayout {
         let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            guard let sectionKind = SectionType(rawValue: sectionIndex) else { return nil }
-            let section = self.layoutSection(section: sectionKind, layoutEnvironment: layoutEnvironment)
+            guard let sectionParamsind = SectionType(rawValue: sectionIndex) else { return nil }
+            let section = self.layoutSection(section: sectionParamsind, layoutEnvironment: layoutEnvironment)
             return section
         }
         let config = UICollectionViewCompositionalLayoutConfiguration()

@@ -15,22 +15,22 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func heightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.m : K.ft, forKey: K.height)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m : Params.ft, forKey: Params.height.rawValue)
         segmentChanged.toggle()
     }
 
     @IBAction func diameterChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.m : K.ft, forKey: K.diameter)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m : Params.ft, forKey: Params.diameter.rawValue)
         segmentChanged.toggle()
     }
 
     @IBAction func massChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.kg : K.lb, forKey: K.mass)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg : Params.lb, forKey: Params.mass.rawValue)
         segmentChanged.toggle()
     }
 
     @IBAction func payweightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? K.kg : K.lb, forKey: K.payweight)
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg : Params.lb, forKey: Params.payweight.rawValue)
         segmentChanged.toggle()
     }
 
@@ -44,16 +44,16 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func setupSegmentState() {
-        UserDefaults.standard.string(forKey: K.height) == K.m
+        UserDefaults.standard.string(forKey: Params.height.rawValue) == Params.m.rawValue
         ? (heightSegControl.selectedSegmentIndex = 1)
         : (heightSegControl.selectedSegmentIndex = 0)
-        UserDefaults.standard.string(forKey: K.diameter) == K.m
+        UserDefaults.standard.string(forKey: Params.diameter.rawValue) == Params.m.rawValue
         ? (diameterSegControl.selectedSegmentIndex = 1)
         : (diameterSegControl.selectedSegmentIndex = 0)
-        UserDefaults.standard.string(forKey: K.mass) == K.kg
+        UserDefaults.standard.string(forKey: Params.mass.rawValue) == Params.kg.rawValue
         ? (massSegControl.selectedSegmentIndex = 1)
         : (massSegControl.selectedSegmentIndex = 0)
-        UserDefaults.standard.string(forKey: K.payweight) == K.kg
+        UserDefaults.standard.string(forKey: Params.payweight.rawValue) == Params.kg.rawValue
         ? (payweightSegControl.selectedSegmentIndex = 1)
         : (payweightSegControl.selectedSegmentIndex = 0)
     }

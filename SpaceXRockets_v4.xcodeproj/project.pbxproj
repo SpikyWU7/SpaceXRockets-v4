@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925AFCEB08F03C15D1A58CD4 /* Pods_SpaceXRockets_v4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3891C318B8F9266663140B0 /* Pods_SpaceXRockets_v4.framework */; };
 		9E0EEE7528B0F3B50038A09B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E0EEE7728B0F3B50038A09B /* Localizable.strings */; };
-		9E35C8BC2875D78E00D9A6BE /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8BB2875D78E00D9A6BE /* rocket.json */; };
 		9E35C8BE287C481000D9A6BE /* StagesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */; };
 		9E35C8C0287C49EF00D9A6BE /* StagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */; };
 		9E35C8C3287D73B600D9A6BE /* NetworkApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */; };
@@ -38,8 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C5E5567985293EE342124BF /* Pods-SpaceXRockets_v4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets_v4.release.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets_v4/Pods-SpaceXRockets_v4.release.xcconfig"; sourceTree = "<group>"; };
 		9E0EEE7A28B0F4180038A09B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9E35C8BB2875D78E00D9A6BE /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
 		9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StagesHeaderView.xib; sourceTree = "<group>"; };
 		9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesHeaderView.swift; sourceTree = "<group>"; };
 		9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApI.swift; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		9E69CF812861D5070031CEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		9EB4E18028AE661E00219EC0 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		D3891C318B8F9266663140B0 /* Pods_SpaceXRockets_v4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXRockets_v4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D607B746A49F35D344F00279 /* Pods-SpaceXRockets_v4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets_v4.debug.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets_v4/Pods-SpaceXRockets_v4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,12 +77,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925AFCEB08F03C15D1A58CD4 /* Pods_SpaceXRockets_v4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A0B78C98734FEABD361909F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D607B746A49F35D344F00279 /* Pods-SpaceXRockets_v4.debug.xcconfig */,
+				5C5E5567985293EE342124BF /* Pods-SpaceXRockets_v4.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9E35C8C1287D73A200D9A6BE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,8 @@
 			children = (
 				9E69CF722861D5050031CEA4 /* SpaceXRockets_v4 */,
 				9E69CF712861D5050031CEA4 /* Products */,
+				8A0B78C98734FEABD361909F /* Pods */,
+				DE8C3604154A5D1AC399B707 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,9 +206,16 @@
 				9E627FB928622A6400B1859B /* View */,
 				9E69CF7C2861D5070031CEA4 /* Assets.xcassets */,
 				9E69CF812861D5070031CEA4 /* Info.plist */,
-				9E35C8BB2875D78E00D9A6BE /* rocket.json */,
 			);
 			path = SpaceXRockets_v4;
+			sourceTree = "<group>";
+		};
+		DE8C3604154A5D1AC399B707 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3891C318B8F9266663140B0 /* Pods_SpaceXRockets_v4.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +225,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E69CF842861D5070031CEA4 /* Build configuration list for PBXNativeTarget "SpaceXRockets_v4" */;
 			buildPhases = (
+				9ED3B50B28B110EF007F3651 /* ShellScript */,
+				1AF0536E2557BE70024BC8A0 /* [CP] Check Pods Manifest.lock */,
 				9E69CF6C2861D5050031CEA4 /* Sources */,
 				9E69CF6D2861D5050031CEA4 /* Frameworks */,
 				9E69CF6E2861D5050031CEA4 /* Resources */,
@@ -259,7 +282,6 @@
 				9E627FA52861F1FC00B1859B /* VerticalCollectionViewCell.xib in Resources */,
 				9E548BEF2865E9C500BD62E8 /* ButtonCollectionViewCell.xib in Resources */,
 				9E0EEE7528B0F3B50038A09B /* Localizable.strings in Resources */,
-				9E35C8BC2875D78E00D9A6BE /* rocket.json in Resources */,
 				9E35C8CB287ED72E00D9A6BE /* RocketCell.xib in Resources */,
 				9E627FA12861F1C500B1859B /* HorizontalCollectionViewCell.xib in Resources */,
 				9E548BE52865E99300BD62E8 /* ImageCollectionViewCell.xib in Resources */,
@@ -271,6 +293,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AF0536E2557BE70024BC8A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpaceXRockets_v4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ED3B50B28B110EF007F3651 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9E69CF6C2861D5050031CEA4 /* Sources */ = {
@@ -445,6 +509,7 @@
 		};
 		9E69CF852861D5070031CEA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D607B746A49F35D344F00279 /* Pods-SpaceXRockets_v4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +540,7 @@
 		};
 		9E69CF862861D5070031CEA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5E5567985293EE342124BF /* Pods-SpaceXRockets_v4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

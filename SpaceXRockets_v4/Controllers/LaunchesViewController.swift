@@ -17,7 +17,6 @@ class LaunchesViewController: UIViewController {
     var dataArray = ["AAA", "BBB", "CCC"]
     var rocketID: String?
     var rocketName: String?
-    let format = Format()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +44,7 @@ class LaunchesViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARParams: - UITableViewDataSource
 
 extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

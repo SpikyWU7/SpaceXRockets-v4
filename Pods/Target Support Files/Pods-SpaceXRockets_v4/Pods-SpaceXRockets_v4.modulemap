@@ -1,0 +1,6 @@
+framework module Pods_SpaceXRockets_v4 {
+  umbrella header "Pods-SpaceXRockets_v4-umbrella.h"
+
+  export *
+  module * { export * }
+}
