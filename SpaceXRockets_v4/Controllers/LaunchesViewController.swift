@@ -17,12 +17,12 @@ class LaunchesViewController: UIViewController {
     var dataArray = ["AAA", "BBB", "CCC"]
     var rocketID: String?
     var rocketName: String?
+    let format = Format()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navItem.topItem?.title = rocketName
         launchesTable.dataSource = self
-        launchesTable.backgroundColor = .blue
         launchesTable.register(UINib(nibName: RocketCell.reuseId, bundle: nil), forCellReuseIdentifier: RocketCell.reuseId)
         networkAPI.getLaunches { [self] (result) in
             switch result {
@@ -33,6 +33,7 @@ class LaunchesViewController: UIViewController {
                     }
                 }
                 self.launchesTable.reloadData()
+                self.newArray.sort(by: { $0.dateUtc > $1.dateUtc })
             case .failure(_):
                 print("Error")
             }
@@ -59,8 +60,16 @@ extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = launchesTable.dequeueReusableCell(withIdentifier: "RocketCell") as? RocketCell else { return UITableViewCell() }
         cell.initCell(with: newArray[indexPath.row])
-        cell.backgroundColor = .black
-        cell.selectionStyle = .none
+//        cell.backgroundColor = .black
+//        cell.selectionStyle = .none
+        let formatGet = DateFormatter()
+        formatGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZ"
+
+        let formatSet = DateFormatter()
+        formatSet.dateFormat = "d MMMM, yyyy"
+
+        guard let date = formatGet.date(from: newArray[indexPath.row].dateUtc) else { return UITableViewCell() }
+        cell.rocketCellDate.text = formatSet.string(from: date)
         if newArray[indexPath.row].success != nil {
             if newArray[indexPath.row].success! {
                 cell.rocketImage.image = UIImage(named: "rocketTrue")

@@ -18,7 +18,7 @@ class HorizontalCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellView.layer.cornerRadius = 25.0
+        cellView.layer.cornerRadius = 30.0
     }
 
     func configure(with model: Cell) {

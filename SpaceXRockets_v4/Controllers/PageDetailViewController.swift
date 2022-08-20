@@ -30,16 +30,16 @@ struct Section {
 
 class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSettingsVCProtocol {
 
+    private let format = Format()
     let networkAPI = NetworkAPI.shared
     var rockets: [RocketModel] = []
     var index: Int = 0
     var dataSource: UICollectionViewDiffableDataSource<SectionType, Cell>! = nil
     var collectionView: UICollectionView! = nil
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
-        navigationItem.title = "Rocket"
         setupCollectionView()
         createDataSource()
         reload()
@@ -50,7 +50,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         networkAPI.getRockets(dataType: [RocketModel].self) { data in
             self.rockets = data
             self.reloadData()
-    }
+        }
     }
     
     static func getInstance(index: Int) -> PageDetailViewController {
@@ -77,7 +77,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     func setupCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .blue
+        collectionView.showsVerticalScrollIndicator = false
         let headerNib = UINib(nibName: StagesHeaderView.reuseId, bundle: nil)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId)
         let nib1 = UINib(nibName: ImageCollectionViewCell.reuseId, bundle: nil)
@@ -128,8 +128,8 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
                 type: .firstStage,
                 cells: [
                     Cell(title: "Количество двигателей", value: String(rocket.firstStage.engines)),
-                    Cell(title: "Количество топлива", value: String(rocket.firstStage.fuelAmountTons)),
-                    Cell(title: "Время сгорания", value: String(rocket.firstStage.burnTimeSec ?? 0))
+                    Cell(title: "Количество топлива", value: "\(String(rocket.firstStage.fuelAmountTons)) ton"),
+                    Cell(title: "Время сгорания", value: "\(rocket.firstStage.burnTimeSec ?? 0) sec")
                 ]
             ),
             Section(
@@ -137,8 +137,8 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
                 cells:
                     [
                         Cell(title: "Количество двигателей", value: String(rocket.secondStage.engines)),
-                        Cell(title: "Количество топлива", value: String(rocket.secondStage.fuelAmountTons)),
-                        Cell(title: "Время сгорания", value: String(rocket.secondStage.burnTimeSec ?? 0))
+                        Cell(title: "Количество топлива", value: "\(rocket.secondStage.fuelAmountTons) ton"),
+                        Cell(title: "Время сгорания", value: "\(rocket.secondStage.burnTimeSec ?? 0) sec")
                     ]
             ),
             Section(
@@ -202,9 +202,9 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
     func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StagesHeaderView.reuseId, for: indexPath) as! StagesHeaderView
         if indexPath.section == 3 {
-            header.configure(with: "Первая ступень")
+            header.configure(with: "ПЕРВАЯ СТУПЕНЬ")
         } else {
-            header.configure(with: "Вторая ступень")
+            header.configure(with: "ВТОРАЯ СТУПЕНЬ")
         }
         return header
     }
@@ -220,12 +220,6 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         dataSource?.apply(snapshot)
     }
 }
-
-
-
-
-
-
 
 
 //MARK: - createLayout
@@ -278,15 +272,14 @@ extension PageDetailViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(1.0))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = .init(top: 10.0, leading: 0.1, bottom: 10.0, trailing: 0.1)
-        group.interItemSpacing = .fixed(1.0)
+        group.contentInsets = .init(top: 1.0, leading: 5.0, bottom: 1.0, trailing: 5.0)
         
-        let rootGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.2),
-                                                   heightDimension: .fractionalHeight(1.0/7.0))
+        let rootGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.5),
+                                                   heightDimension: .fractionalHeight(1.0/7.5))
         let rootGroup = NSCollectionLayoutGroup.horizontal(layoutSize: rootGroupSize, subitems: [group])
         let section = NSCollectionLayoutSection(group: rootGroup)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 5, bottom: 0, trailing: 5)
         return section
     }
     
@@ -305,7 +298,7 @@ extension PageDetailViewController {
         let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: containerGroupSize, subitems: [trailingGroup])
 
         let section = NSCollectionLayoutSection(group: containerGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 5, bottom: 5, trailing: 5)
         return section
     }
 
@@ -328,9 +321,10 @@ extension PageDetailViewController {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(60))
 
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -8, bottom: 0, trailing: 0)
 
         section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: -10, leading: 5, bottom: 5, trailing: 5)
         return section
     }
 
@@ -353,25 +347,26 @@ extension PageDetailViewController {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(70))
 
         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -8, bottom: 0, trailing: 0)
 
         section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 5, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: -10, leading: 5, bottom: 5, trailing: 5)
         // section.supplementariesFollowContentInsets = true
         return section
     }
     
     private func launchesSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .fractionalHeight(1.0))
+                                              heightDimension: .fractionalHeight(1.0/8.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(1.0))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         let rootGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .fractionalHeight(0.08))
+                                                   heightDimension: .fractionalHeight(1.0/8.0))
         let rootGroup = NSCollectionLayoutGroup.horizontal(layoutSize: rootGroupSize, subitems: [group])
         let section = NSCollectionLayoutSection(group: rootGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
         return section
     }
 }

@@ -15,16 +15,17 @@ class RocketCell: UITableViewCell {
     @IBOutlet var rocketImage: UIImageView!
     static let reuseId = "RocketCell"
 
-//    let format = Format()
+    override func layoutSubviews() {
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 15, bottom: 3, right: 15))
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        rocketView.layer.cornerRadius = rocketView.frame.size.height / 25
+        rocketView.layer.cornerRadius = 25
+        rocketView.layer.masksToBounds = true
     }
 
     func initCell(with data: LaunchDates) {
         rocketCellLabel.text = data.name
-        rocketCellDate.text = data.dateUtc
-
     }
 }

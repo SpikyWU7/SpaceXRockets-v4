@@ -16,7 +16,7 @@ class CustomPageViewController: UIPageViewController {
         // Do any additional setup after loading the view.
         self.dataSource = self
         self.delegate = self
-        self.view.backgroundColor = .systemGray
+        
         individualPageViewControllerList = [
             PageDetailViewController.getInstance(index: 0),
             PageDetailViewController.getInstance(index: 1),

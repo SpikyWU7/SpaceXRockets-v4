@@ -58,6 +58,12 @@ extension RocketModel {
         let engines: Int
         let fuelAmountTons: Double
         let burnTimeSec: Int?
+
+        var fuel: NSAttributedString {
+            let fuelStr = String(fuelAmountTons)
+            let text = fuelStr.withBoldText(text: "New")
+            return text
+        }
     }
 
     struct SecondStage: Decodable, Hashable {

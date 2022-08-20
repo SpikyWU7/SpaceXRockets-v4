@@ -19,7 +19,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        launchesButton.layer.cornerRadius = 30.0
+        launchesButton.layer.cornerRadius = 15.0
     }
 
     @IBAction func launchesButtonPressed(_ sender: UIButton) {

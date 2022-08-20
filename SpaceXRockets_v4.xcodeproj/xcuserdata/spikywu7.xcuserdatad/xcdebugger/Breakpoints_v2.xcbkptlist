@@ -286,8 +286,8 @@
             filePath = "SpaceXRockets_v4/Controllers/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "createLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,22 +382,6 @@
             filePath = "SpaceXRockets_v4/Controllers/PageDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "176E4516-7C8A-4B2F-A8AF-47D1FB2A8509"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpaceXRockets_v4/Controllers/PageDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
@@ -407,7 +391,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84ED00A5-0E24-45BD-A289-16993709100D"
+            uuid = "3B726857-7219-4841-B35B-C4E49259CB77"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -423,22 +407,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3B726857-7219-4841-B35B-C4E49259CB77"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpaceXRockets_v4/Controllers/PageDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E375DC4E-894E-4224-B141-70F72AEB7D00"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -446,8 +414,8 @@
             filePath = "SpaceXRockets_v4/Controllers/LaunchesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,8 +538,8 @@
             filePath = "SpaceXRockets_v4/Controllers/SettingsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "heightChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,8 +554,8 @@
             filePath = "SpaceXRockets_v4/Controllers/SettingsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "heightChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,8 +570,8 @@
             filePath = "SpaceXRockets_v4/Controllers/SettingsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "diameterChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -618,8 +586,8 @@
             filePath = "SpaceXRockets_v4/Controllers/SettingsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "diameterChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>

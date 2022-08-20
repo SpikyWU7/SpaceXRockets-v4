@@ -84,12 +84,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CuH-e3-FiJ">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CuH-e3-FiJ">
+                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-bp-gy5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <items>
                                     <navigationItem id="7GT-iS-dlL">
                                         <barButtonItem key="backBarButtonItem" title="Назад" id="uw1-Z0-nUN"/>
@@ -102,6 +102,7 @@
                                                     <action selector="backButtonPressed" destination="dW6-aq-xP0" eventType="touchUpInside" id="n03-R7-xL9"/>
                                                 </connections>
                                             </button>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -115,7 +116,7 @@
                             <constraint firstItem="CuH-e3-FiJ" firstAttribute="leading" secondItem="8Ps-ah-Rug" secondAttribute="leading" id="IFQ-ed-DvV"/>
                             <constraint firstItem="ZGd-bp-gy5" firstAttribute="top" secondItem="8Ps-ah-Rug" secondAttribute="top" id="JTe-ql-YrR"/>
                             <constraint firstItem="CuH-e3-FiJ" firstAttribute="trailing" secondItem="8Ps-ah-Rug" secondAttribute="trailing" id="S0A-0H-gfl"/>
-                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="top" secondItem="8Ps-ah-Rug" secondAttribute="top" constant="44" id="UEr-Nw-IhK"/>
+                            <constraint firstItem="CuH-e3-FiJ" firstAttribute="top" secondItem="8Ps-ah-Rug" secondAttribute="top" constant="70" id="UEr-Nw-IhK"/>
                             <constraint firstItem="CuH-e3-FiJ" firstAttribute="top" secondItem="ZGd-bp-gy5" secondAttribute="bottom" id="Xm5-AB-COu"/>
                             <constraint firstItem="ZGd-bp-gy5" firstAttribute="trailing" secondItem="8Ps-ah-Rug" secondAttribute="trailing" id="eT0-wk-Jj5"/>
                             <constraint firstItem="CuH-e3-FiJ" firstAttribute="bottom" secondItem="8Ps-ah-Rug" secondAttribute="bottom" id="gNM-oL-IAc"/>
@@ -185,12 +186,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320.5" height="56"/>
                                 <items>
                                     <navigationItem title="Настройки" id="dmh-xH-OAp">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="CWj-Tu-wzQ">
+                                        <barButtonItem key="rightBarButtonItem" id="CWj-Tu-wzQ">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YOl-tK-x4r">
-                                                <rect key="frame" x="214" y="11" width="90.5" height="34.5"/>
+                                                <rect key="frame" x="207" y="11" width="97.5" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Закрыть">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="dismissPressed:" destination="1FR-cH-Clk" eventType="touchUpInside" id="urT-Dr-tcn"/>
                                                 </connections>
@@ -314,6 +317,7 @@
             <point key="canvasLocation" x="3603.75" y="78.16901408450704"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">

@@ -33,6 +33,7 @@
 		9E69CF7D2861D5070031CEA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E69CF7C2861D5070031CEA4 /* Assets.xcassets */; };
 		9E69CF802861D5070031CEA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E69CF7E2861D5070031CEA4 /* LaunchScreen.storyboard */; };
 		9E69CF882861D5240031CEA4 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */; };
+		9EB4E18128AE661E00219EC0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4E18028AE661E00219EC0 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		9E69CF7F2861D5070031CEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E69CF812861D5070031CEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		9EB4E18028AE661E00219EC0 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +79,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9E35C8C1287D73A200D9A6BE /* Manager */ = {
+		9E35C8C1287D73A200D9A6BE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */,
+				9EB4E18028AE661E00219EC0 /* Formatter.swift */,
 			);
-			path = Manager;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9E35C8C8287ED6C800D9A6BE /* MainLayout */ = {
@@ -179,7 +182,7 @@
 			children = (
 				9E69CF732861D5050031CEA4 /* AppDelegate.swift */,
 				9E69CF752861D5050031CEA4 /* SceneDelegate.swift */,
-				9E35C8C1287D73A200D9A6BE /* Manager */,
+				9E35C8C1287D73A200D9A6BE /* Helpers */,
 				9E627FBD28622F6A00B1859B /* Extension */,
 				9E627FB42862289C00B1859B /* Model */,
 				9E627FBA28622A7300B1859B /* Controllers */,
@@ -280,6 +283,7 @@
 				9E35C8C5287D999200D9A6BE /* LaunchDates.swift in Sources */,
 				9E35C8CF287EDA2B00D9A6BE /* LaunchesViewController.swift in Sources */,
 				9E627FA42861F1FC00B1859B /* VerticalCollectionViewCell.swift in Sources */,
+				9EB4E18128AE661E00219EC0 /* Formatter.swift in Sources */,
 				9E35C8CD287ED73800D9A6BE /* RocketCell.swift in Sources */,
 				9E69CF762861D5050031CEA4 /* SceneDelegate.swift in Sources */,
 				9E627FBF28622F7B00B1859B /* Decoder.swift in Sources */,

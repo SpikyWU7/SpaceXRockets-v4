@@ -28,7 +28,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        labelView.layer.cornerRadius = 15
+        labelView.layer.cornerRadius = 25
     }
     @IBAction func presentSettingsViewController(_ sender: UIButton) {
         self.cellDelegate.presentSettingsViewController()
