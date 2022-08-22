@@ -2,11 +2,11 @@ import UIKit
 
 final class VerticalCollectionViewCell: UICollectionViewCell {
 
-    static var reuseId : String = "VerticalCollectionViewCell"
+    static var reuseId: String = "VerticalCollectionViewCell"
 
     @IBOutlet private var leftLabel: UILabel!
     @IBOutlet private var rightLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

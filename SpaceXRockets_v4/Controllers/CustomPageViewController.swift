@@ -21,8 +21,8 @@ final class CustomPageViewController: UIPageViewController {
 
 extension CustomPageViewController: UIPageViewControllerDataSource {
     func pageViewController(
-                            _ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
     ) -> UIViewController? {
         guard let indexOfCurrentPageViewController = individualPageViewControllerList.firstIndex(
             of: viewController
@@ -38,8 +38,8 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
     }
 
     func pageViewController(
-                            _ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
     ) -> UIViewController? {
         guard let currentIndexOfPageViewController = individualPageViewControllerList.firstIndex(
             of: viewController

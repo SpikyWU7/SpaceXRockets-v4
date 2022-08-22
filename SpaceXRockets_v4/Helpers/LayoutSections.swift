@@ -7,6 +7,11 @@ struct Cell: Hashable {
     let value: String
 }
 
+struct Section {
+    let type: SectionType
+    let cells: [Cell]
+}
+
 enum SectionType: Int, CaseIterable {
     case imageLabel
     case params
@@ -14,11 +19,6 @@ enum SectionType: Int, CaseIterable {
     case firstStage
     case secondStage
     case launches
-}
-
-struct Section {
-    let type: SectionType
-    let cells: [Cell]
 }
 
 extension PageDetailViewController {

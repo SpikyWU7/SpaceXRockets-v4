@@ -5,7 +5,7 @@ final class StagesHeaderView: UICollectionReusableView {
 
     @IBOutlet private var stageLabel: UILabel!
 
-    static var reuseId : String = "StagesHeaderView"
+    static var reuseId: String = "StagesHeaderView"
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,7 +17,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    static var reuseId : String = "ImageCollectionViewCell"
+    static var reuseId: String = "ImageCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

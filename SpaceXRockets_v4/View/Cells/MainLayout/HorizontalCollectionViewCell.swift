@@ -2,7 +2,7 @@ import UIKit
 
 final class HorizontalCollectionViewCell: UICollectionViewCell {
 
-    static var reuseId : String = "HorizontalCollectionViewCell"
+    static var reuseId: String = "HorizontalCollectionViewCell"
     private var model: RocketModel!
 
     @IBOutlet private var cellView: UIView!

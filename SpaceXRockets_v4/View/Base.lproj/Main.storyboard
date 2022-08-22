@@ -94,7 +94,7 @@
                                     <navigationItem id="7GT-iS-dlL">
                                         <barButtonItem key="backBarButtonItem" title="Назад" id="uw1-Z0-nUN"/>
                                         <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="VeE-a2-DCi">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="cancel" id="Xsm-8Z-EHs">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" id="Xsm-8Z-EHs">
                                                 <rect key="frame" x="16" y="5" width="99.5" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Назад"/>
@@ -159,18 +159,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="116" translatesAutoresizingMaskIntoConstraints="NO" id="htn-JU-tUv">
-                                <rect key="frame" x="20" y="136" width="284" height="31"/>
+                                <rect key="frame" x="20" y="136" width="283.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Высота" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajg-Jj-aeC" userLabel="Высота">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dby-hO-4df">
-                                        <rect key="frame" x="184" y="0.0" width="100" height="32"/>
+                                        <rect key="frame" x="183.5" y="0.0" width="100" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="HhX-ic-GUW"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="HhX-ic-GUW"/>
                                         </constraints>
                                         <segments>
                                             <segment title="m"/>
@@ -183,12 +183,12 @@
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyu-5j-WtO">
-                                <rect key="frame" x="0.0" y="0.0" width="320.5" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <items>
                                     <navigationItem title="Настройки" id="dmh-xH-OAp">
                                         <barButtonItem key="rightBarButtonItem" title="Закрыть" style="plain" id="CWj-Tu-wzQ">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="YOl-tK-x4r">
-                                                <rect key="frame" x="207" y="11" width="97.5" height="34.5"/>
+                                                <rect key="frame" x="206.5" y="11" width="97.5" height="34.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -202,7 +202,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-v8-2Cf">
-                                <rect key="frame" x="20" y="212" width="284" height="31"/>
+                                <rect key="frame" x="20" y="212" width="283.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGM-Ld-qnu" userLabel="Высота">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="31"/>
@@ -214,9 +214,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SXc-3u-COr">
-                                        <rect key="frame" x="184" y="0.0" width="100" height="32"/>
+                                        <rect key="frame" x="184" y="0.0" width="99.5" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Hk8-Lr-WUp"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Hk8-Lr-WUp"/>
                                         </constraints>
                                         <segments>
                                             <segment title="m"/>
@@ -229,7 +229,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Te5-eq-1MD">
-                                <rect key="frame" x="20" y="288" width="284" height="31"/>
+                                <rect key="frame" x="20" y="288" width="283.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Масса" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkE-fc-5lG" userLabel="Высота">
                                         <rect key="frame" x="0.0" y="0.0" width="152" height="31"/>
@@ -241,9 +241,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ggf-uh-Qne">
-                                        <rect key="frame" x="184" y="0.0" width="100" height="32"/>
+                                        <rect key="frame" x="184" y="0.0" width="99.5" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Cps-Kv-TXw"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Cps-Kv-TXw"/>
                                         </constraints>
                                         <segments>
                                             <segment title="kg"/>
@@ -256,10 +256,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3D6-Q1-foO">
-                                <rect key="frame" x="20" y="364" width="284" height="31"/>
+                                <rect key="frame" x="20" y="364" width="283.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Полезная нагрузка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-KZ-qCS" userLabel="Высота">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="MIg-oX-k26"/>
                                         </constraints>
@@ -268,9 +268,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qec-wb-KLX">
-                                        <rect key="frame" x="184" y="0.0" width="100" height="32"/>
+                                        <rect key="frame" x="183.5" y="0.0" width="100" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="d1H-WS-oDJ"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="d1H-WS-oDJ"/>
                                         </constraints>
                                         <segments>
                                             <segment title="kg"/>
