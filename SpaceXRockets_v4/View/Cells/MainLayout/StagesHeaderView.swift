@@ -1,16 +1,9 @@
-//
-//  StagesHeaderView.swift
-//  SpaceXRockets_v4
-//
-//  Created by Spiky WU7 on 11.07.2022.
-//
-
 import Foundation
 import UIKit
 
-class StagesHeaderView: UICollectionReusableView {
+final class StagesHeaderView: UICollectionReusableView {
 
-    @IBOutlet var stageLabel: UILabel!
+    @IBOutlet private var stageLabel: UILabel!
 
     static var reuseId : String = "StagesHeaderView"
 

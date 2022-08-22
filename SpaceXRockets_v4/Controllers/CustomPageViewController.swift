@@ -1,8 +1,8 @@
 import UIKit
 
-class CustomPageViewController: UIPageViewController {
+final class CustomPageViewController: UIPageViewController {
 
-    var individualPageViewControllerList = [UIViewController]()
+    private var individualPageViewControllerList = [UIViewController]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
             return nil
         }
 
-        if indexOfCurrentPageViewController == 0 {
+        if indexOfCurrentPageViewController < 1 {
             return nil
         } else {
             return individualPageViewControllerList[indexOfCurrentPageViewController - 1]

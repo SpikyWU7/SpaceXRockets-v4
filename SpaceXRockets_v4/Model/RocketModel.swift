@@ -20,7 +20,7 @@ struct RocketModel: Decodable, Hashable {
     }
 
     var firstLaunch: String {
-        String.strToDate(string: firstFlight)
+        String.strToDate(string: firstFlight, fromDate: "yyyy-MM-dd")
     }
 }
 

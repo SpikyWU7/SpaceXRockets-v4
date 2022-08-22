@@ -7,11 +7,11 @@ enum NetworkManagerError: Error {
     case badLocalUrl
 }
 
-class NetworkAPI {
+final class NetworkAPI {
 
-    let cachedImage = NSCache<NSString, NSData>()
-    let decoder = JSONDecoder()
-    let session: URLSession
+    private let cachedImage = NSCache<NSString, NSData>()
+    private let decoder = JSONDecoder()
+    private let session: URLSession
     static let shared = NetworkAPI()
 
     init() {
@@ -26,7 +26,6 @@ class NetworkAPI {
 
         URLSession.shared.dataTask(with: urlString) { data, _, error in
             guard let data = data else {
-                print(error ?? "error getting data")
                 return
             }
             do {
@@ -69,7 +68,6 @@ class NetworkAPI {
 
     private func download(imageURL: URL, completion: @escaping (Data?, Error?) -> Void) {
         if let imageData = cachedImage.object(forKey: imageURL.absoluteString as NSString) {
-            print("using cached images")
             completion(imageData as Data, nil)
             return
         }

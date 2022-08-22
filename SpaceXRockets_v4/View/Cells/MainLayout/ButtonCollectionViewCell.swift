@@ -1,19 +1,12 @@
-//
-//  ButtonCollectionViewCell.swift
-//  SpaceXRockets_v4
-//
-//  Created by Spiky WU7 on 24.06.2022.
-//
-
 import UIKit
 
 protocol CallLaunchesVCProtocol {
     func presentLaunchesViewController()
 }
 
-class ButtonCollectionViewCell: UICollectionViewCell {
+final class ButtonCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var launchesButton: UIButton!
+    @IBOutlet private var launchesButton: UIButton!
     static var reuseId : String = "ButtonCollectionViewCell"
     var cellDelegate: CallLaunchesVCProtocol!
 

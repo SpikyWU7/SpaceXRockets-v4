@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
-    @IBOutlet var heightSegControl: UISegmentedControl!
-    @IBOutlet var diameterSegControl: UISegmentedControl!
-    @IBOutlet var massSegControl: UISegmentedControl!
-    @IBOutlet var payweightSegControl: UISegmentedControl!
+    @IBOutlet private var heightSegControl: UISegmentedControl!
+    @IBOutlet private var diameterSegControl: UISegmentedControl!
+    @IBOutlet private var massSegControl: UISegmentedControl!
+    @IBOutlet private var payweightSegControl: UISegmentedControl!
     private var segmentChanged = false
 
     override func viewDidLoad() {
@@ -14,33 +14,55 @@ class SettingsViewController: UIViewController {
         setupSegmentState()
     }
 
-    @IBAction func heightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m.rawValue : Params.ft.rawValue, forKey: Params.height.rawValue)
+    @IBAction private func heightChanged(_ sender: UISegmentedControl) {
+        UserDefaults.standard.set(
+            (sender.selectedSegmentIndex != 0)
+            ? Params.m.rawValue
+            : Params.ft.rawValue,
+            forKey: Params.height.rawValue
+        )
         segmentChanged = true
     }
 
-    @IBAction func diameterChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m.rawValue : Params.ft.rawValue, forKey: Params.diameter.rawValue)
+    @IBAction private func diameterChanged(_ sender: UISegmentedControl) {
+        UserDefaults.standard.set(
+            (sender.selectedSegmentIndex != 0)
+            ? Params.m.rawValue
+            : Params.ft.rawValue,
+            forKey: Params.diameter.rawValue
+        )
         segmentChanged = true
     }
 
-    @IBAction func massChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg.rawValue : Params.lb.rawValue, forKey: Params.mass.rawValue)
+    @IBAction private func massChanged(_ sender: UISegmentedControl) {
+        UserDefaults.standard.set(
+            (sender.selectedSegmentIndex != 0)
+            ? Params.kg.rawValue
+            : Params.lb.rawValue,
+            forKey: Params.mass.rawValue
+        )
         segmentChanged = true
     }
 
-    @IBAction func payweightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg.rawValue : Params.lb.rawValue, forKey: Params.payweight.rawValue)
+    @IBAction private func payweightChanged(_ sender: UISegmentedControl) {
+        UserDefaults.standard.set(
+            (sender.selectedSegmentIndex != 0)
+            ? Params.kg.rawValue
+            : Params.lb.rawValue,
+            forKey: Params.payweight.rawValue
+        )
         segmentChanged = true
     }
 
-    @IBAction func dismissPressed(_ sender: UIButton) {
+    @IBAction private func dismissPressed(_ sender: UIButton) {
         if segmentChanged {
             NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
         }
         self.presentingViewController?.dismiss(animated: true)
     }
 }
+
+// MARK: - setupSegmentState
 
 extension SettingsViewController {
     private func setupSegmentState() {

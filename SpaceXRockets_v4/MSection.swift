@@ -13,4 +13,3 @@ struct MSection: Decodable, Hashable {
     let title: String
     let items: [MChat]
 }
-
