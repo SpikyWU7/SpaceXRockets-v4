@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 enum NetworkManagerError: Error {
     case badResponse(URLResponse?)
@@ -110,5 +111,12 @@ class NetworkAPI {
         DispatchQueue.main.async {
             self.download(imageURL: url, completion: completion)
         }
+    }
+
+    func image(data: Data?) -> UIImage? {
+        if let data = data {
+            return UIImage(data: data)
+        }
+        return UIImage(systemName: "img1")
     }
 }
