@@ -9,7 +9,6 @@ final class VerticalCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func configure(with model: Cell) {

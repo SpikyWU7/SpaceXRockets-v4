@@ -41,7 +41,7 @@ final class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, 
         vcInt.index = index
         return vcInt
     }
-    // swiftlint:disable force_cast
+
     func presentLaunchesViewController() {
         let viewController = UIStoryboard(
             name: "Main",
@@ -63,7 +63,6 @@ final class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, 
         ) as! SettingsViewController
         self.present(viewController, animated: true)
     }
-    // swiftlint:enable force_cast
 
 // MARK: - setupCollectionView()
 

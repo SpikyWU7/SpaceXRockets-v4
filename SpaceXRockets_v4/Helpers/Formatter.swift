@@ -6,7 +6,6 @@ enum Params: String {
     case diameter = "Diameter"
     case mass = "Mass"
     case payweight = "PayloadWeights"
-    // swiftlint: disable identifier_name
     case m = "m"
     case ft = "ft"
     case kg = "kg"
