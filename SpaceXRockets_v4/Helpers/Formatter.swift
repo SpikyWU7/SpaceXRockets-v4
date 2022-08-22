@@ -14,14 +14,15 @@ enum Params: String {
 }
 
 extension String {
-    func strToDate(string: String) -> String {
+    static func strToDate(string: String) -> String {
         let formatGet = DateFormatter()
         let formatSet = DateFormatter()
-//        var date: Date
         let strDate: String
         formatGet.dateFormat = "yyyy-MM-dd"
         formatSet.dateFormat = "d MMMM, yyyy"
-        guard let date = formatGet.date(from: string) else { return "error formatting strToDate" }
+        guard let date = formatGet.date(from: string) else {
+            return "error formatting strToDate"
+        }
         strDate = formatSet.string(from: date)
         return strDate
     }

@@ -16,14 +16,11 @@ struct RocketModel: Decodable, Hashable {
     let id: String
 
     var launchCost: String {
-        String(format: "$%.0f млн.", costPerLaunch / 1000000)
+        String(format: "$%.0f млн.", costPerLaunch / 1_000_000)
     }
 
     var firstLaunch: String {
-        let strDate = "lol"
-        let strResult: String
-        strResult = strDate.strToDate(string: firstFlight)
-        return strResult
+        String.strToDate(string: firstFlight)
     }
 }
 

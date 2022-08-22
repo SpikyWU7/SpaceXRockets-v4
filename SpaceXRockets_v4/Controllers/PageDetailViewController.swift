@@ -1,17 +1,9 @@
-//
-//  PageDetailViewController.swift
-//  SpaceXRockets_v4
-//
-//  Created by Spiky WU7 on 21.06.2022.
-//
-
 import UIKit
 
 struct Cell: Hashable {
     let id = UUID()
     let title: String
     let value: String
-    //    let units: String
 }
 
 enum SectionType: Int, CaseIterable {
@@ -41,7 +33,12 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         setupCollectionView()
         createDataSource()
         reload()
-        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: Notification.Name("reloadData"), object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reload),
+            name: Notification.Name("reloadData"),
+            object: nil
+        )
     }
 
     @objc func reload() {
@@ -50,7 +47,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
             self.reloadData()
         }
     }
-    
+
     static func getInstance(index: Int) -> PageDetailViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageDetailViewController") as! PageDetailViewController
         vc.index = index
@@ -68,7 +65,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         self.present(viewController, animated: true, completion: nil)
     }
-    
+
 
     //MARParams: - setupCollectionView
 
@@ -89,7 +86,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
         collectionView.register(nib4, forCellWithReuseIdentifier: ButtonCollectionViewCell.reuseId)
         view.addSubview(collectionView)
     }
-    
+
     func makeSections(from rocket: RocketModel) -> [Section] {
         [
             Section(
@@ -120,7 +117,7 @@ class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, CallSe
                 cells: [
                     Cell(title: "Первый запуск", value: rocket.firstLaunch),
                     Cell(title: "Страна", value: rocket.country),
-                    Cell(title: "Стоимость запуска", value: rocket.launchCost),
+                    Cell(title: "Стоимость запуска", value: rocket.launchCost)
                 ]
             ),
             Section(
@@ -234,7 +231,7 @@ extension PageDetailViewController {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
         return layout
     }
-    
+
     private func layoutSection(section: SectionType, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         switch section {
         case .imageLabel:
@@ -263,7 +260,7 @@ extension PageDetailViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
-    
+
     private func paramsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
@@ -272,7 +269,7 @@ extension PageDetailViewController {
                                                heightDimension: .fractionalHeight(1.0))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = .init(top: 1.0, leading: 5.0, bottom: 1.0, trailing: 5.0)
-        
+
         let rootGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.5),
                                                    heightDimension: .fractionalHeight(1.0/7.5))
         let rootGroup = NSCollectionLayoutGroup.horizontal(layoutSize: rootGroupSize, subitems: [group])
@@ -281,7 +278,7 @@ extension PageDetailViewController {
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 5, bottom: 0, trailing: 5)
         return section
     }
-    
+
     private func mainSection() -> NSCollectionLayoutSection {
         let trailingItem =  NSCollectionLayoutItem(layoutSize:
                                                     NSCollectionLayoutSize(

@@ -1,22 +1,13 @@
-//
-//  CustomPageViewController.swift
-//  SpaceXRockets_v4
-//
-//  Created by Spiky WU7 on 21.06.2022.
-//
-
 import UIKit
 
 class CustomPageViewController: UIPageViewController {
 
     var individualPageViewControllerList = [UIViewController]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.dataSource = self
         self.delegate = self
-        
         individualPageViewControllerList = [
             PageDetailViewController.getInstance(index: 0),
             PageDetailViewController.getInstance(index: 1),
@@ -28,14 +19,16 @@ class CustomPageViewController: UIPageViewController {
 
 }
 
-
-
-
-
-
 extension CustomPageViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let indexOfCurrentPageViewController = individualPageViewControllerList.firstIndex(of: viewController)!
+    func pageViewController(
+                            _ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
+        guard let indexOfCurrentPageViewController = individualPageViewControllerList.firstIndex(
+            of: viewController
+        ) else {
+            return nil
+        }
 
         if indexOfCurrentPageViewController == 0 {
             return nil
@@ -44,8 +37,15 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
         }
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let currentIndexOfPageViewController = individualPageViewControllerList.firstIndex(of: viewController)!
+    func pageViewController(
+                            _ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
+        guard let currentIndexOfPageViewController = individualPageViewControllerList.firstIndex(
+            of: viewController
+        ) else {
+            return nil
+        }
 
         if currentIndexOfPageViewController == individualPageViewControllerList.count - 1 {
             return nil
@@ -57,10 +57,10 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
 
 extension CustomPageViewController: UIPageViewControllerDelegate {
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return 4
+        4
     }
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
+        0
     }
 }

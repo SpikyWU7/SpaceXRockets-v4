@@ -15,23 +15,23 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func heightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m : Params.ft, forKey: Params.height.rawValue)
-        segmentChanged.toggle()
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m.rawValue : Params.ft.rawValue, forKey: Params.height.rawValue)
+        segmentChanged = true
     }
 
     @IBAction func diameterChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m : Params.ft, forKey: Params.diameter.rawValue)
-        segmentChanged.toggle()
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.m.rawValue : Params.ft.rawValue, forKey: Params.diameter.rawValue)
+        segmentChanged = true
     }
 
     @IBAction func massChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg : Params.lb, forKey: Params.mass.rawValue)
-        segmentChanged.toggle()
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg.rawValue : Params.lb.rawValue, forKey: Params.mass.rawValue)
+        segmentChanged = true
     }
 
     @IBAction func payweightChanged(_ sender: UISegmentedControl) {
-        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg : Params.lb, forKey: Params.payweight.rawValue)
-        segmentChanged.toggle()
+        UserDefaults.standard.set((sender.selectedSegmentIndex != 0) ? Params.kg.rawValue : Params.lb.rawValue, forKey: Params.payweight.rawValue)
+        segmentChanged = true
     }
 
     @IBAction func dismissPressed(_ sender: UIButton) {
