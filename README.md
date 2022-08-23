@@ -2,6 +2,7 @@
 
 ### iOS 13+ test task app
 
+- MVC
 - Diffable data source
 - Compositional layout
 - Table view
