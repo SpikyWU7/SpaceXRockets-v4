@@ -125,7 +125,7 @@ final class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, 
                 type: .firstStage,
                 cells: [
                     Cell(title: "Количество двигателей", value: String(rocket.firstStage.engines)),
-                    Cell(title: "Количество топлива", value: "\(String(rocket.firstStage.fuelAmountTons)) ton"),
+                    Cell(title: "Количество топлива", value: "\(rocket.firstStage.fuelAmountTons) ton"),
                     Cell(title: "Время сгорания", value: "\(rocket.firstStage.burnTimeSec ?? 0) sec")
                 ]
             ),
