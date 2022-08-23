@@ -10,6 +10,8 @@
 		925AFCEB08F03C15D1A58CD4 /* Pods_SpaceXRockets_v4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3891C318B8F9266663140B0 /* Pods_SpaceXRockets_v4.framework */; };
 		9E0EEE7528B0F3B50038A09B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E0EEE7728B0F3B50038A09B /* Localizable.strings */; };
 		9E2A644728B3A1C70011670E /* LayoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A644628B3A1C70011670E /* LayoutSections.swift */; };
+		9E2A644928B518C80011670E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A644828B518C80011670E /* String+Extension.swift */; };
+		9E2A644B28B518EB0011670E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A644A28B518EB0011670E /* UITableView+Extension.swift */; };
 		9E35C8BE287C481000D9A6BE /* StagesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */; };
 		9E35C8C0287C49EF00D9A6BE /* StagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */; };
 		9E35C8C3287D73B600D9A6BE /* NetworkApI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */; };
@@ -34,13 +36,15 @@
 		9E69CF7D2861D5070031CEA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E69CF7C2861D5070031CEA4 /* Assets.xcassets */; };
 		9E69CF802861D5070031CEA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E69CF7E2861D5070031CEA4 /* LaunchScreen.storyboard */; };
 		9E69CF882861D5240031CEA4 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */; };
-		9EB4E18128AE661E00219EC0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4E18028AE661E00219EC0 /* Formatter.swift */; };
+		9EB4E18128AE661E00219EC0 /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB4E18028AE661E00219EC0 /* Params.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C5E5567985293EE342124BF /* Pods-SpaceXRockets_v4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets_v4.release.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets_v4/Pods-SpaceXRockets_v4.release.xcconfig"; sourceTree = "<group>"; };
 		9E0EEE7A28B0F4180038A09B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9E2A644628B3A1C70011670E /* LayoutSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSections.swift; sourceTree = "<group>"; };
+		9E2A644828B518C80011670E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		9E2A644A28B518EB0011670E /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		9E35C8BD287C481000D9A6BE /* StagesHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StagesHeaderView.xib; sourceTree = "<group>"; };
 		9E35C8BF287C49EF00D9A6BE /* StagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesHeaderView.swift; sourceTree = "<group>"; };
 		9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApI.swift; sourceTree = "<group>"; };
@@ -67,7 +71,7 @@
 		9E69CF7F2861D5070031CEA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E69CF812861D5070031CEA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E69CF872861D5240031CEA4 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
-		9EB4E18028AE661E00219EC0 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		9EB4E18028AE661E00219EC0 /* Params.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		D3891C318B8F9266663140B0 /* Pods_SpaceXRockets_v4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXRockets_v4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D607B746A49F35D344F00279 /* Pods-SpaceXRockets_v4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXRockets_v4.debug.xcconfig"; path = "Target Support Files/Pods-SpaceXRockets_v4/Pods-SpaceXRockets_v4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,13 +97,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9E2A644C28B519190011670E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E2A644828B518C80011670E /* String+Extension.swift */,
+				9E2A644A28B518EB0011670E /* UITableView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9E35C8C1287D73A200D9A6BE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				9E35C8C2287D73B600D9A6BE /* NetworkApI.swift */,
-				9EB4E18028AE661E00219EC0 /* Formatter.swift */,
+				9EB4E18028AE661E00219EC0 /* Params.swift */,
 				9E2A644628B3A1C70011670E /* LayoutSections.swift */,
 				9E0EEE7728B0F3B50038A09B /* Localizable.strings */,
+				9E2A644C28B519190011670E /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -335,6 +349,7 @@
 			files = (
 				9E548BF6286B54B800BD62E8 /* PageDetailViewController.swift in Sources */,
 				9E69CF882861D5240031CEA4 /* CustomPageViewController.swift in Sources */,
+				9E2A644B28B518EB0011670E /* UITableView+Extension.swift in Sources */,
 				9E627FCB28635C8F00B1859B /* RocketModel.swift in Sources */,
 				9E35C8C0287C49EF00D9A6BE /* StagesHeaderView.swift in Sources */,
 				9E627FA02861F1C500B1859B /* HorizontalCollectionViewCell.swift in Sources */,
@@ -343,9 +358,10 @@
 				9E35C8D12881A42500D9A6BE /* SettingsViewController.swift in Sources */,
 				9E35C8C5287D999200D9A6BE /* LaunchDates.swift in Sources */,
 				9E2A644728B3A1C70011670E /* LayoutSections.swift in Sources */,
+				9E2A644928B518C80011670E /* String+Extension.swift in Sources */,
 				9E35C8CF287EDA2B00D9A6BE /* LaunchesViewController.swift in Sources */,
 				9E627FA42861F1FC00B1859B /* VerticalCollectionViewCell.swift in Sources */,
-				9EB4E18128AE661E00219EC0 /* Formatter.swift in Sources */,
+				9EB4E18128AE661E00219EC0 /* Params.swift in Sources */,
 				9E35C8CD287ED73800D9A6BE /* RocketCell.swift in Sources */,
 				9E69CF762861D5050031CEA4 /* SceneDelegate.swift in Sources */,
 				9E548BEE2865E9C500BD62E8 /* ButtonCollectionViewCell.swift in Sources */,
