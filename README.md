@@ -6,7 +6,6 @@
 - Diffable data source
 - Compositional layout
 - Table view
-- Localization (eng, rus)
 - Swiftlint
 - PageViewController
 
