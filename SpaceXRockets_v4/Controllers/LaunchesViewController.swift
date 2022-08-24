@@ -21,11 +21,11 @@ final class LaunchesViewController: UIViewController {
             ),
             forCellReuseIdentifier: RocketCell.reuseId
         )
-        networkAPI.getLaunches { [self] result in
+        networkAPI.getLaunches { result in
             switch result {
             case .success(let launches):
                 for element in launches {
-                    if element.rocket == rocketID && rocketID != nil {
+                    if element.rocket == self.rocketID && self.rocketID != nil {
                         self.launchArray.append(element)
                     }
                 }

@@ -11,13 +11,7 @@ final class NetworkAPI {
 
     private let cachedImage = NSCache<NSString, NSData>()
     private let decoder = JSONDecoder()
-    private let session: URLSession
     static let shared = NetworkAPI()
-
-    init() {
-        let config = URLSessionConfiguration.default
-        session = URLSession(configuration: config)
-    }
 
     func getRockets<T: Decodable>(dataType: T.Type, completion: @escaping(T) -> Void) {
         guard let urlString = URL(string: "https://api.spacexdata.com/v4/rockets") else {
@@ -71,7 +65,7 @@ final class NetworkAPI {
             completion(imageData as Data, nil)
             return
         }
-        let task = session.downloadTask(with: imageURL) { localUrl, response, error in
+        let task = URLSession.shared.downloadTask(with: imageURL) { localUrl, response, error in
             if let error = error {
                 completion(nil, error)
                 return

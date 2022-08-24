@@ -9,7 +9,14 @@ final class RocketCell: UITableViewCell {
     static let reuseId = "RocketCell"
 
     override func layoutSubviews() {
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 15, bottom: 3, right: 15))
+        contentView.frame = contentView.frame.inset(
+            by: UIEdgeInsets(
+                top: 3,
+                left: 15,
+                bottom: 3,
+                right: 15
+            )
+        )
     }
 
     override func awakeFromNib() {
