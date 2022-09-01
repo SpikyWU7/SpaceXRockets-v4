@@ -43,24 +43,28 @@ final class PageDetailViewController: UIViewController, CallLaunchesVCProtocol, 
     }
 
     func presentLaunchesViewController() {
-        let viewController = UIStoryboard(
+        guard let viewController = UIStoryboard(
             name: "Main",
             bundle: nil
         ).instantiateViewController(
             withIdentifier: "LaunchesViewController"
-        ) as! LaunchesViewController
+        ) as? LaunchesViewController else {
+            return
+        }
         viewController.rocketID = rockets[self.index].id
         viewController.rocketName = rockets[self.index].name
         self.present(viewController, animated: true)
     }
 
     func presentSettingsViewController() {
-        let viewController = UIStoryboard(
+        guard let viewController = UIStoryboard(
             name: "Main",
             bundle: nil
         ).instantiateViewController(
             withIdentifier: "SettingsViewController"
-        ) as! SettingsViewController
+        ) as? SettingsViewController else {
+            return
+        }
         self.present(viewController, animated: true)
     }
 
